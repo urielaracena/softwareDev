@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4: Introduction to CSS</title>
+    <style>
+        h1 { background-color: darkblue; color: floralwhite; font-family: "arial black"; text-align: center; padding: 50px; }
+        h2.author { color: blueviolet; text-align: right; }
+        .author { font-family: cursive; }
+        p.fontweight { font-weight: bolder; font-size: 20px; }
+        p.fontstyle { font-style: italic; font-size: 10px; }
+        p.author { font-size: 120%; }
+        p#intro { text-align: justify; }
+        .subtitle{border-bottom: dashed 2px blueviolet;}
+        .box1, .box2, .box3, .box4 { background-color: aqua; }
+        .box1 { border: 5px dotted orange; margin-top: 100px; padding-left: 50px; }
+        .box2 { border: 20px groove olive; margin: 50px; padding: 20px; }
+        .box3 { border: 3px solid red; margin: 200px 150px; padding: 50px 100px; }
+        .box4 { margin: 30px 100px 200px 50px; padding: 50px 20px 70px 100px; }
+        </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <h1>Introduction to CSS</h1>
+        <p id="intro">CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear.</p>
+        <p>CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear.</p>
+        <p class="author">By: Uriel Aracena</p>
+        <h2 class="author">Typology</h2>
+        <p class="author">Styling text</p>
+        <p class="fontweight">Paragraph with font-weight bold</p>
+        <p class="fontstyle">Paragraph with font-style italic</p>
+        <h2 class="subtitle">Borders</h2>
+
+        <div class="box1">Box 1: CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear</div>
+        <div class="box2">Box 2: CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear</div>
+        <div class="box3">Box 3: CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear</div>
+        <div class="box4">Box 4: CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear</div>
+        <hr>
+        <h2 class="subtitle">Text Shadow</h2>
+        <h3 class="shadow1">Uriel Aracena</h3>
+        <h3 class="shadow2">Uriel Aracena</h3>
+        <h3 class="shadow3">Uriel Aracena</h3>
+        <h3 class="shadow4">Uriel Aracena</h3>
+        <h3 class="shadow5">Uriel Aracena</h3>
+        <h3 class="shadow6">Uriel Aracena</h3>
+    
+        <h2 class="subtitle">Box Shadow</h2>
+        <div class="shadowbox1">Box 1</div>
+        <div class="shadowbox2">Box 2</div>
+        <div class="shadowbox3">Box 3</div>
+        <div class="shadowbox4">Box 4</div>
+        <div class="shadowbox5">Box 5</div>
+    
+        <h2 class="subtitle">Rounded Borders</h2>
+        <div class="radiusbox1">Box 1</div>
+        <div class="radiusbox2">Box 2</div>
+        <div class="radiusbox3">Box 3</div>
+        <div class="radiusbox4">Box 4</div>
+        <div class="radiusbox5">Box 5</div>
+    
+        <h2 class="subtitle">Basic Image Formatting</h2>
+        <img class="bird bird1" src="images/img1.jpg" alt="image of a bird">
+        <img class="bird bird2" src="images/img1.jpg" alt="image of a bird">
+        <img class="bird bird3" src="images/img1.jpg" alt="image of a bird">
+        <img class="bird bird4" src="images/img1.jpg" alt="image of a bird">
+    
+        <h2 class="subtitle">Image Filters</h2>
+        <figure>
+            <img class="blur1" src="images/img1.jpg" alt="image of a bird">
+            <figcaption>Blurred filter with 1px</figcaption>
+            <img class="blur2" src="images/img1.jpg" alt="image of a bird">
+            <figcaption>Blurred filter with 5px</figcaption>
+            <img class="blur3" src="images/img1.jpg" alt="image of a bird">
+            <figcaption>Blurred filter with 10px</figcaption>
+        </figure>
+    </body>
+</html>
