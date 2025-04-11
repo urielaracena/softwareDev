@@ -177,7 +177,7 @@ body {
   }
   
   .logo img {
-    max-width: 290px;
+    max-width: 100%;
     height: auto;
   }
   
@@ -189,7 +189,7 @@ body {
   
   .title h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 80px;
+    font-size: clamp(2rem, 6vw, 80px);
     color: #3c7a3c;
   }
   
