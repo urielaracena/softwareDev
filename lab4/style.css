@@ -107,7 +107,7 @@ figcaption{margin-bottom: 50px;}
     border-radius: 10px;
     box-shadow: 1px 1px 3px gray;
     overflow: hidden;
-    margin: 2%;
+    margin: 5% 1%;
 }
 
 .cardtitle{
@@ -133,4 +133,322 @@ figcaption{margin-bottom: 50px;}
 .crad:hover .linkcard2{
     background-color: crimson;
     text-decoration: underline;
+}
+.navbar{
+    width: 300px;
+}
+.navbar li{list-style-type:none;}
+.navbar li a{
+    background-color: purple;
+    color: white;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.navbar li a:hover{
+    background-color: lightcyan;
+    color: purple;
+    display: underline;
+    padding: 20px;
+    border: 1px solid purple;
+    text-decoration: underline;
+    font-weight: 900;
+}
+html{scroll-behavior: smooth;}
+*{box-sizing: border-box;}
+.navbarhorizontal{
+    background-color: orangered;
+}
+.navbarhorizontal a{
+    color: whitesmoke;
+    text-decoration: none;
+    display: inline-block;
+    width: 24.5%;
+    text-align: center;
+    padding: 20px;
+}
+.navbarhorizontal a:hover{
+    background-color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+/*colors*/
+.rgbcontainer, .hexcontainer{
+    border: solid gray 1px;
+    display: flex;
+    width: 500px;
+    padding: 20px;
+    justify-content: space-around;
+}
+.rgbcontainer div, .hexcontainer div{
+    border: solid green 1px;
+    width: 100px;
+    height: 20px;
+}
+.rgbcontainer div:nth-child(1){background-color: rgb(30, 110, 10);}
+.rgbcontainer div:nth-child(2){background-color: rgb(190, 20, 150);}
+.rgbcontainer div:nth-child(3){background-color: rgb(10, 40, 210);}
+.hexcontainer div:nth-child(1){background-color: #D2641E;}
+.hexcontainer div:nth-child(2){background-color: #384949;}
+.hexcontainer div:nth-child(3){background-color: #E1D1F4;}
+
+/*positions*/
+.imgcontainer{
+    width: 50%;
+    box-shadow: 2px 2px 5px #D2641E;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 20px;
+    bottom: 20px;
+    left: 100px;
+}
+.imgtitle{
+    background-color: rgba(190, 20, 150, 0.5);
+    position: absolute;
+    top: 90px;
+    padding: 2%;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+.fixedtabs{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+/*background images*/
+.imgbackground, .imgbackground2{
+    display: flex;
+    justify-content: space-around;
+}
+.imgbackground div, .imgbackground2 div{
+    width: 30%;
+    height: 200px;
+    border: solid gray 1px;
+}
+.imgbackground div:nth-child(1){
+    background-image: linear-gradient(red, darkblue);
+}
+.imgbackground div:nth-child(2){
+    background-image: linear-gradient(to right, red, darkblue);
+}
+.imgbackground div:nth-child(3){
+    background-image: linear-gradient(to bottom left, red, darkblue);
+}
+.imgbackground2 div:nth-child(1){
+    background-image: linear-gradient(red, darkblue, yellow);
+}
+.imgbackground2 div:nth-child(2){
+    background-image: linear-gradient(red, darkblue, yellow, purple);
+}
+.imgbackground2 div:nth-child(3){
+    background-image: linear-gradient(red 20%, darkblue 60%, yellow 30%, purple 80%);
+}
+/*hero image*/
+.heroimgcontainer{
+    width: 800px;
+    margin: auto;
+    height: 500px;
+    border: solid gray 1px;
+    background-image: linear-gradient(to top, rgba(255, 0, 0, 0.6),rgba(0, 0, 139, 0.781)),url("images/img1.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.herocontent{
+    background-color: rgba(50, 50, 50, 0.8);
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    left: 10%;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px, 1px, 5px, black;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+.herocontent_title{
+    color: rgba(201, 39, 166, 0.6);
+}
+.herocontent_intro{
+    margin-top: -30px;
+    font-size: 0.8em;
+    font-style: italic;
+}
+.herocontent_link{
+    background-color: rgba(0, 0, 140, 0.6);
+    color: white;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+}
+.herocontent_link:hover{
+    background-color: rgba(220, 200, 200, 0.9);
+    color: crimson;
+    font-weight: bolder;
+}
+
+/*lab4 excercise*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Image Container */
+.imgctn {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+/* Common image properties for all three images */
+.img1, .img2, .img3 {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.img1 img, .img2 img, .img3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* First Image: Invert filter with bottom caption */
+.caption1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Background with opacity */
+    color: #fff; /* Font color */
+    font-size: 18px; /* Different font size */
+    padding: 10px; /* Padding */
+    border: 2px solid #fff; /* Border */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Second Image: Blur filter with middle caption */
+.blur {
+    filter: blur(3px); /* Blur filter */
+}
+
+.caption2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7); /* Background with opacity */
+    color: #333; /* Font color */
+    font-size: 16px; /* Different font size */
+    padding: 15px; /* Padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow */
+    text-align: center;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.garden-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #4CAF50; /* Background color */
+    color: white; /* Font color */
+    padding: 5px 10px; /* Padding */
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.garden-link:hover {
+    background-color: #45a049;
+}
+
+/* Third Image: Linear gradient filter */
+.img3 {
+    position: relative;
+}
+
+.img3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,0,0,0.5), rgba(0,0,255,0.5));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.garden-title {
+    text-align: center;
+    color: white;
+    margin: 10px 0;
+    width: 100%;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Three paragraphs with different widths and placements */
+.paragraph1 {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 20px auto 10px 10px; /* Positioned on the left side */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.paragraph2 {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 10px 10px 10px auto; /* Positioned on the right side */
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.paragraph3 {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 10px auto; /* Centered */
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
 }

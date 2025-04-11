@@ -26,7 +26,7 @@
         <p id="intro">CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear.</p>
         <p>CSS (Cascading Style Sheets) allows you to create rules that specify how the content of an element should appear.</p>
         <p class="author">By: Uriel Aracena</p>
-        <h2 class="author">Typology</h2>
+        <h2 class="author" id="typology">Typology</h2>
         <p class="author">Styling text</p>
         <p class="fontweight">Paragraph with font-weight bold</p>
         <p class="fontstyle">Paragraph with font-style italic</p>
@@ -59,7 +59,7 @@
         <div class="radiusbox4">Box 4</div>
         <div class="radiusbox5">Box 5</div>
     
-        <h2 class="subtitle">Basic Image Formatting</h2>
+        <h2 class="subtitle" id="images">Basic Image Formatting</h2>
         <img class="bird bird1" src="images/img1.jpg" alt="image of a bird">
         <img class="bird bird2" src="images/img1.jpg" alt="image of a bird">
         <img class="bird bird3" src="images/img1.jpg" alt="image of a bird">
@@ -87,7 +87,7 @@
         <figure>
             <img style="filter: invert(0%);" src="images/img1.jpg" alt="image of a bird">
             <figcaption>Invert filter with 0%</figcaption>
-            <img style="filter: invert(50%);" src="images/img1.jpg" alt="image of a bird">
+            <img style="filter: invert(10%);" src="images/img1.jpg" alt="image of a bird">
             <figcaption>Invert filter with 10%</figcaption>
             <img style="filter: invert(100%);" src="images/img1.jpg" alt="image of a bird">
             <figcaption>Invert filter with 100%</figure>
@@ -103,7 +103,7 @@
             <section class="images">Images container</section>
         </main>
 
-        <h2>Cards</h2>
+        <h2 class="subtitle" id="cards">Cards</h2>
         <section class="cardcontainer">
             <div class="card">
                 <img class="imgcard" src="images/img1.jpg" alt="image of a bird">
@@ -134,8 +134,64 @@
                 <p class="cardinfo">Brooklyn Botanical Garden occupies 52 acres in central Brooklyn</p>
                <a class="linkcard" href="https://birdfeederhub.com/backyard-birds-in-new-york/" target="_blank" rel="noopener noreferrer">Visit Blossom Garden</a>
             </div>
+    </section>
+<h2 class="subtitle">Navigation Tabs</h2>
+<ul class="navbar">
+    <li><a href="#">Home</a></li>
+    <li><a href="#typology">Typology</a></li>
+    <li><a href="#images">Images</a></li>
+    <li><a href="#cards">Cards</a></li>
+</ul>
 
-        </section>
+<h2 class="subtitle">Colors</h2>
+<h3>RGB Value</h3>
+<section class="rgbcontainer">
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+<h3>Hex Code</h3>
+<section class="hexcontainer">
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
 
-    </body>
+<h2 class="subtitle">Positions</h2>
+<div class="imgcontainer">
+    <img src="images/img1.jpg" alt="image of a bird">
+    <p class="imgtitle">A Bird In The Sky</p>
+</div>
+
+<h2 class="subtitle">Background Images</h2>
+<section class="imgbackground">
+<div></div>
+<div></div>
+<div></div>
+</section>
+
+<p>Linear gradient with 2+ colors</p>
+<section class="imgbackground2">
+    <div></div>
+    <div></div>
+    <div></div>
+    </section>
+
+<h2 class="subtitle">Hero Image With Linear-Gradient</h2>
+<section class="heroimgcontainer">
+    <div class="herocontent">
+        <h3 class="herocontent_title">Bird</h3>
+        <p class="herocontent_intro">Bird In The Sky</p>
+        <a class="herocontent_link" href="https://birdfeederhub.com/backyard-birds-in-new-york/" target="_blank" rel="noopener noreferrer">More Info</a>
+    </div>
+</section>
+
+<nav class="navbarhorizontal fixedtabs">
+    <a href="#">Home</a>
+    <a href="#typology">Typology</a>
+    <a href="#images">Images</a>
+    <a href="#cards">Cards</a>
+</nav>
+
+</body>
 </html>
