@@ -43,7 +43,7 @@ background-color: aqua;
 .slidecontainer:hover .slidecontent{
     transform: translateX(0px);
 }
-.card, .cardslide{
+.card1, .cardslide{
     width: 300px;
     border-radius: 10px;
     overflow: hidden;
@@ -51,7 +51,7 @@ background-color: aqua;
     transition: ease-in-out 500ms;
     margin: 30px;
 }
-.card:hover{
+.card1:hover{
     transform: scale(0.95);
     box-shadow: none;
 }
