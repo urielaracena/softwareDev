@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        .scrollspy {
+            position: relative;
+            height: 400px;
+            overflow: auto;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            background: #c7c7c7;
+            border-radius: 10px;
+        }
+        .uniform-thumb {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        h4 {
+            text-align: center;
+            color: black;
+            font-style: italic;
+        }
+        p {
+            text-indent: 10%;
+        }
+        .scrollspy::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .scrollspy::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .scrollspy::-webkit-scrollbar-thumb {
+            background-color: #6c757d;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .list-group-item.active {
+            background-color: #28a745 !important; /* Custom green color */
+            color: white !important; /* Ensures text stays white */
+            border: 2px solid white !important; /* White border around the active item */
+        }
+
+        /* Optional: Remove the outline on active item */
+        .list-group-item:focus {
+            outline: none;
+        }
+
+        /* You can also customize the hover state of inactive items */
+        .list-group-item:hover {
+            background-color: #e9ecef; /* Light gray on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title text-center">Scrollspy</h1>
+    <section class="scrollspyctnr container bg-dark py-3 rounded">
+        <h2 class="text-light text-center">Learn About A Plant</h2>
+        <div class="row">
+            <div class="col-4">
+            <div id="list" class="list-group" ;>
+                <a class="list-group-item list-group-item-action active" href="#list-item-1">Roses</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">Crape Myrtles</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">Orchids</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">Gardenias</a>
+            </div>
+            </div>
+    
+            <div class="col-8">
+            <div data-bs-spy="scroll" data-bs-target="#list" data-bs-smooth-scroll="true" class="scrollspy" tabindex="0">
+                <h4 id="list-item-1">Roses</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/plants/roses.jpeg" alt="">
+                <p>A timeless garden classic, this flowering plant comes in a wide range of colors, shapes, and sizes. It needs at least six hours of direct sunlight, well-draining soil, and regular pruning. With attentive care, it rewards gardeners with blooms from spring through fall, often carrying a lovely fragrance as well.</p>
+                <h4 id="list-item-2">Crape Myrtles</h4>
+                <img class="img-thumbnail uniform-thumb" style="height: 200px; object-fit: cover;" src="images/plants/crape_myrtle.jpg" alt="">
+                <p>Bursting with vibrant color in the heat of summer, this hardy tree or shrub lights up gardens with clusters of flowers in pink, red, white, or purple. It thrives in full sun, is drought-tolerant once established, and requires only light pruning to maintain shape and encourage extended blooming into early fall.</p>
+                <h4 id="list-item-3">Orchids</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/plants/orchids.jpeg" alt="">
+                <p>Elegant and tropical, these flowering plants are known for their intricate, long-lasting blooms and graceful appearance. They flourish in bright, indirect light with high humidity and need a well-draining orchid mix. With minimal but consistent watering, they can bloom for weeks or even months, adding a touch of the exotic to indoor or shaded garden spaces.</p>
+                <h4 id="list-item-4">Gardenias</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/plants/gardenia.jpg" alt="">
+                <p>Fragrant white flowers and glossy green leaves make this shrub a garden favorite, especially in warmer, humid climates. It thrives in acidic, well-drained soil and prefers morning sun with afternoon shade. Consistent moisture and protection from cold drafts help ensure a long blooming season from late spring through summer.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
