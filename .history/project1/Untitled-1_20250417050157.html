@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scrollspy Carousel Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* General layout styles */
+    .carousel-container {
+      overflow-x: scroll;
+      display: flex;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      height: 100vh;
+    }
+
+    .carousel-item {
+      scroll-snap-align: start;
+      flex: 0 0 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #f2f2f2;
+      height: 100vh;
+    }
+
+    .carousel-item h1, .carousel-item p {
+      color: white;
+    }
+
+    #carousel1 { background: #e74c3c; }
+    #carousel2 { background: #2ecc71; }
+    #carousel3 { background: #3498db; }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .nav-link.active {
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* Scrollspy navigation */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background-color: white;
+    }
+
+    .nav-link {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+
+  <!-- Fixed Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Japan Tour</a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="#carousel1">Tokyo</a>
+        <a class="nav-link" href="#carousel2">Kyoto</a>
+        <a class="nav-link" href="#carousel3">Osaka</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Horizontal Scrollable Carousels (Three independent sections) -->
+  <div class="carousel-container" id="carousel1">
+    <div class="carousel-item" id="item1">
+      <div>
+        <h1>Tokyo</h1>
+        <p>Welcome to Tokyo, Japan's bustling capital filled with neon lights and endless excitement.</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="item2">
+      <div>
+        <h1>Kyoto</h1>
+        <p>Kyoto is home to temples, geisha culture, and stunning natural beauty like bamboo forests.</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="item3">
+      <div>
+        <h1>Osaka</h1>
+        <p>Osaka is known for street food, friendly locals, and a fantastic modern vibe.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-container" id="carousel2">
+    <div class="carousel-item" id="item4">
+      <div>
+        <h1>Mount Fuji</h1>
+        <p>Mount Fuji is an iconic mountain and a must-see landmark of Japan. Great for hiking and photography.</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="item5">
+      <div>
+        <h1>Nara</h1>
+        <p>Nara is a historic city known for its peaceful parks and friendly deer.</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="item6">
+      <div>
+        <h1>Hokkaido</h1>
+        <p>Hokkaido is famous for its beautiful snow-covered landscapes, ideal for winter sports.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-container" id="carousel3">
+    <div class="carousel-item" id="item7">
+      <div>
+        <h1>Okinawa</h1>
+        <p>Okinawa offers beautiful beaches, clear waters, and a unique island culture.</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="item8">
+      <div>
+        <h1>Nagasaki</h1>
+        <p>Learn about Japan's history and culture through Nagasaki's beautiful architecture and scenic views.</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="item9">
+      <div>
+        <h1>Sendai</h1>
+        <p>Sendai is known for its green landscapes, historic buildings, and delicious food.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

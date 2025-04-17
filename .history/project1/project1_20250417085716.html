@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Japan - Discover The Land of the Rising Sun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root {
+        --primary: #e53e3e;
+        --secondary: #1a202c;
+        --light: #f7fafc;
+        --dark: #2d3748;
+        --accent: #ed8936;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+      
+      /* Modern navbar */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        transition: all 0.3s ease;
+      }
+      
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary) !important;
+        letter-spacing: 1px;
+      }
+      
+      .logo-img {
+        max-height: 35px;
+        width: auto;
+        margin-right: 8px;
+      }
+      
+      /* Hero section */
+      .hero {
+        height: 100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/Japan-tokyo.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      
+      .hero-content {
+        text-align: center;
+        color: white;
+        max-width: 800px;
+        padding: 2rem;
+      }
+      
+      .hero-title {
+        font-size: 4.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      }
+      
+      .hero-btn {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        background-color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+      
+      .hero-btn:hover {
+        background-color: transparent;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Section styling */
+      .section-title {
+        position: relative;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        text-align: center;
+        color: var(--secondary);
+      }
+      
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      /* Card styling */
+      .feature-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .card-img {
+        height: 220px;
+        object-fit: cover;
+        width: 100%;
+      }
+      
+      .card-body {
+        padding: 25px;
+      }
+      
+      .card-title {
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--secondary);
+        font-size: 1.5rem;
+      }
+      
+      .card-text {
+        color: #4a5568;
+        line-height: 1.7;
+      }
+      
+      /* Categories section */
+      .category-section {
+        background-color: #f8f9fa;
+        padding: 5rem 0;
+      }
+      
+      .category-tab {
+        border: none;
+        background-color: transparent;
+        color: var(--dark);
+        font-weight: 600;
+        padding: 15px 25px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+      }
+      
+      .category-tab.active {
+        background-color: var(--primary);
+        color: white;
+        box-shadow: 0 5px 15px rgba(229, 62, 62, 0.3);
+      }
+      
+      .category-tab:hover:not(.active) {
+        background-color: rgba(229, 62, 62, 0.1);
+      }
+      
+      .category-content {
+        padding: 30px;
+        border-radius: 12px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      /* Carousel styling */
+      .carousel-item {
+        height: 70vh;
+      }
+      
+      .carousel-item img {
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .carousel-caption h5 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      
+      /* Call to action */
+      .cta-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/mount-fuji.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 6rem 0;
+        text-align: center;
+      }
+      
+      .cta-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      
+      .cta-text {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* Footer */
+      .footer {
+        background-color: var(--secondary);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+      
+      .footer-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+      
+      .footer-link {
+        color: #cbd5e0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        margin-bottom: 10px;
+      }
+      
+      .footer-link:hover {
+        color: var(--primary);
+      }
+      
+      .social-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: white;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icon:hover {
+        color: var(--primary);
+        transform: translateY(-5px);
+      }
+      
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #4a5568;
+        margin-top: 3rem;
+      }
+      
+      /* Mobile responsive */
+      @media (max-width: 992px) {
+        .hero-title {
+          font-size: 3.5rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.4rem;
+        }
+        
+        .carousel-item {
+          height: 50vh;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.8rem;
+        }
+        
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .category-tabs {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/japan-logo.jpeg" alt="Logo" class="d-inline-block align-text-top logo-img">
+          Discover Japan
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cuisine">Cuisine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nature">Nature</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiences">Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Discover Japan</h1>
+        <p class="hero-subtitle">Experience the perfect harmony of ancient traditions and modern innovations</p>
+        <a href="#experiences" class="btn btn-danger hero-btn">Explore Now</a>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title">Welcome to Japan</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <p class="lead mb-4">Japan offers a captivating blend of ancient traditions and cutting-edge modernity. From tranquil temples and cherry blossoms to bustling cities and technological marvels, immerse yourself in a culture unlike any other.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuisine Section -->
+    <section id="cuisine" class="category-section">
+      <div class="container">
+        <h2 class="section-title">Japanese Cuisine</h2>
+        
+        <div class="row">
+          <div class="col-lg-3 mb-4">
+            <div class="d-flex flex-column category-tabs">
+              <button class="category-tab active" id="sushi-tab" data-bs-toggle="pill" data-bs-target="#sushi">Sushi</button>
+              <button class="category-tab" id="ramen-tab" data-bs-toggle="pill" data-bs-target="#ramen">Ramen</button>
+              <button class="category-tab" id="unagi-tab" data-bs-toggle="pill" data-bs-target="#unagi">Unagi</button>
+              <button class="category-tab" id="yakitori-tab" data-bs-toggle="pill" data-bs-target="#yakitori">Yakitori</button>
+              <button class="category-tab" id="okonomiyaki-tab" data-bs-toggle="pill" data-bs-target="#okonomiyaki">Okonomiyaki</button>
+              <button class="category-tab" id="curry-tab" data-bs-toggle="pill" data-bs-target="#curry">Katsu Curry</button>
+            </div>
+          </div>
+          
+          <div class="col-lg-9">
+            <div class="tab-content category-content">
+              <div class="tab-pane fade show active" id="sushi">
+                <div class="row align-items-center">
+                  <div class="col-md-5">
+                    <img src="images/sushi.jpg" alt="Sushi plate with various nigiri and rolls" class="img-fluid rounded">
+                  </div>
+                  <div class="col-md-7">
+                    <h3 class="mb-3">Sushi</h3>
+                    <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables. The rice is seasoned with rice vinegar, sugar, and salt, then topped or filled with ingredients like tuna, salmon, yellowtail, shrimp, or cucumber. Sushi has a delicate balance of flavors - slightly tart rice complementing the fresh fish, enhanced by small amounts of wasabi (spicy green paste), soy sauce, and pickled ginger.</p>
+                    <p>Common types include nigiri (hand-pressed rice topped with fish), maki (rice and fillings rolled in seaweed), and sashimi (just the raw fish, technically not sushi).</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="ramen">
+                <div class="row align-items-center">
+                  <div class="col-md-5">
+                    <img src="images/ramen.jpg" alt="Bowl of ramen with broth, noodles and toppings" class="img-fluid rounded">
+                  </div>
+                  <div class="col-md-7">
+                    <h3 class="mb-3">Ramen</h3>
+                    <p>A noodle soup dish featuring wheat noodles served in a meat-based broth, flavored with soy sauce or miso, and topped with ingredients like sliced pork (chashu), dried seaweed (nori), green onions, and soft-boiled eggs.</p>
+                    <p>The broth varieties include shoyu (soy sauce), miso (fermented soybean paste), shio (salt), and tonkotsu (pork bone). Tonkotsu broth is simmered for hours, resulting in a rich, creamy texture. The noodles range from thin and straight to thick and wavy, offering a complex, umami-rich taste experience.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="unagi">
+                <div class="row align-items-center">
+                  <div class="col-md-5">
+                    <img src="images/unagi.jpg" alt="Grilled unagi eel on rice" class="img-fluid rounded">
+                  </div>
+                  <div class="col-md-7">
+                    <h3 class="mb-3">Unagi</h3>
+                    <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce and typically served over rice. The eel is first split down the back, gutted, boned, and filleted before being skewered and grilled.</p>
+                    <p>During cooking, it's repeatedly brushed with tare sauce (a thick, sweet glaze made from soy sauce, mirin, sake, and sugar) in a technique called "kabayaki." This results in a caramelized exterior with a rich, smoky-sweet flavor. The meat has a distinctive tender texture that's fatty and moist.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="yakitori">
+                <div class="row align-items-center">
+                  <div class="col-md-5">
+                    <img src="images/yakitori.jpg" alt="Grilled yakitori chicken skewers" class="img-fluid rounded">
+                  </div>
+                  <div class="col-md-7">
+                    <h3 class="mb-3">Yakitori</h3>
+                    <p>Skewered chicken pieces grilled over charcoal. Different parts of the chicken are used including breast, thigh, skin, liver, heart, and cartilage, each offering distinct textures and flavors.</p>
+                    <p>The meat is cut into bite-sized pieces, skewered on bamboo sticks, and grilled over binchotan (white charcoal). Yakitori is typically seasoned either with tare (a sweet-savory glaze) or simply with salt (shio), resulting in juicy, tender chicken with a smoky char and caramelized exterior.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="okonomiyaki">
+                <div class="row align-items-center">
+                  <div class="col-md-5">
+                    <img src="images/okonomiyaki.jpg" alt="Okonomiyaki pancake topped with sauce and bonito flakes" class="img-fluid rounded">
+                  </div>
+                  <div class="col-md-7">
+                    <h3 class="mb-3">Okonomiyaki</h3>
+                    <p>A savory pancake containing a variety of ingredients in a wheat-flour-based batter. The batter includes grated nagaimo (mountain yam), dashi, eggs, and shredded cabbage, mixed with ingredients like thinly sliced pork belly, octopus, squid, shrimp, or cheese.</p>
+                    <p>In Osaka style, all ingredients are mixed together before cooking, while Hiroshima style layers the ingredients with fried noodles. The batter is poured onto a hot griddle and cooked on both sides until golden brown, then topped with a sweet-savory sauce, Japanese mayonnaise, and bonito flakes.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="curry">
+                <div class="row align-items-center">
+                  <div class="col-md-5">
+                    <img src="images/katsu-curry.jpg" alt="Katsu curry with rice and breaded cutlet" class="img-fluid rounded">
+                  </div>
+                  <div class="col-md-7">
+                    <h3 class="mb-3">Katsu Curry</h3>
+                    <p>A dish combining crispy breaded cutlet with Japanese curry sauce, served over rice. The katsu is typically a pork cutlet (tonkatsu) or chicken breast, pounded thin, seasoned with salt and pepper, coated in flour, beaten egg, and panko breadcrumbs, then deep-fried until golden and crunchy.</p>
+                    <p>The curry sauce contains onions, carrots, potatoes, and sometimes apples, cooked with curry powder or roux blocks. Japanese curry is milder and sweeter than Indian curries, with a thick, gravy-like consistency, offering contrasting textures of crunchy cutlet, smooth curry, and fluffy rice.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nature Section -->
+    <section id="nature" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Beautiful Japanese Flora</h2>
+        
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <img src="images/japanese-maple.jpg" alt="Japanese maple with vibrant red foliage" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Japanese Maple</h3>
+                <p class="card-text">Renowned for spectacular foliage displays with delicate, palmate leaves that transform from vibrant spring colors to fiery autumn shades. Hundreds of cultivars offer variations in leaf shape, size, and color, creating dappled shade and airy lightness in garden settings.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <img src="images/japanese-sakura.jpg" alt="Cherry blossom tree in full bloom" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Sakura (Cherry Blossom)</h3>
+                <p class="card-text">Japan's most iconic flower produces delicate five-petaled blossoms ranging from white to pink. Blooms appear in dramatic profusion along branches before leaves emerge, creating ethereal clouds of color that last just 1-2 weeks, embodying the Japanese aesthetic principle of mono no aware.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <img src="images/japanese-peony.jpg" alt="Lush Japanese tree peony blooms" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Japanese Peony</h3>
+                <p class="card-text">Tree peonies produce spectacular dinner-plate sized blooms measuring 8-12 inches across with silky, ruffled petals in colors ranging from pure white to nearly black purple. These woody shrubs maintain their structure year-round with deeply lobed, blue-green leaves that turn bronze-purple in fall.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <img src="images/japanese-iris.jpeg" alt="Japanese iris flowers in purple and white" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Japanese Iris</h3>
+                <p class="card-text">Produces elegant flowers with six flattened petals that spread horizontally. These striking 4-6 inch blooms appear in early summer in colors from white to purple, often with contrasting veining or edges. The plants form clumps of tall, blade-like foliage reaching 2-4 feet high.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <img src="images/japanese-nandina.jpg" alt="Nandina with red berries and colorful foliage" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Nandina</h3>
+                <p class="card-text">Offers year-round interest with constantly changing foliage colors. Its pinnately compound leaves emerge coppery-pink before turning blue-green in summer and brilliant red-orange in autumn. In winter, bright red berries persist, creating striking contrast against the colorful foliage.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="feature-card">
+              <img src="images/japanese-camellia.jpg" alt="Pink camellia japonica flower" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Japanese Camellia</h3>
+                <p class="card-text">Brings exceptional floral beauty during winter with large, perfectly formed flowers in shades from white to deep red. The blooms can be simple singles with golden stamens or complex peony forms, set against glossy dark green foliage that provides excellent garden structure year-round.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Tourist Experiences in Japan -->
+  <article id="experiences" class="scrollspyctnr bg-dark text-light rounded mb-4">
+    <h2 class="text-center mb-4">Top Tourist Experiences in Japan</h2>
+    <div class="accordion" id="touristAccordion">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+            Relax in an Onsen
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#touristAccordion">
+          <div class="accordion-body">
+            <img class="img-thumbnail uniform-thumb" src="images/onsen.jpg" alt="Traditional Japanese outdoor hot spring bath">
+            <p>Visiting an onsen (hot spring bath) is a must-do for travelers looking to unwind in Japan's beautiful natural settings. Found in scenic areas like Hakone, Beppu, and Kusatsu, onsens offer soothing mineral-rich waters. Many ryokan offer private baths. Be sure to shower thoroughly before entering, and keep towels and hair out of the water.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Cherry Blossom Viewing
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#touristAccordion">
+          <div class="accordion-body">
+            <img class="img-thumbnail uniform-thumb" src="images/cherry-blossom-view.jpg" alt="Cherry blossom viewing picnic in a Japanese park">
+            <p>If you're visiting in spring, don't miss hanami—Japan's iconic cherry blossom viewing. Visit Ueno Park in Tokyo or Maruyama Park in Kyoto. Bring snacks or buy a hanami bento box, and enjoy the blossoms during the day or at night with light-up displays.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+            Visit an Animal Café
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#touristAccordion">
+          <div class="accordion-body">
+            <img class="img-thumbnail uniform-thumb" src="images/animal-cafe.jpg" alt="Tourist petting a Shiba Inu at a Japanese animal cafe">
+            <p>Animal cafés are a unique Japan experience. Enjoy drinks while petting cats, owls, hedgehogs, or Shiba Inus. They're especially popular in Tokyo areas like Harajuku and Shibuya. There are entry fees, time limits, and gentle rules to protect the animals.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+            Explore a Japanese Castle
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#touristAccordion">
+          <div class="accordion-body">
+            <img class="img-thumbnail uniform-thumb" src="images/japanese-castle.jpg" alt="Scenic view of Himeji Castle in Japan">
+            <p>Touring a Japanese castle is a great way to dive into samurai history. Visit Himeji, Matsumoto, or Osaka Castle. These castles offer museum exhibits, historical interiors, and scenic views from the top floors.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+            Experience a Tea Ceremony
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#touristAccordion">
+          <div class="accordion-body">
+            <img class="img-thumbnail uniform-thumb" src="images/tea-ceremony.jpg" alt="Traditional Japanese tea ceremony">
+            <p>Join a tea ceremony to experience Japanese aesthetics and hospitality. You can take part in Kyoto, Tokyo, and many cultural centers. Learn the graceful steps of making matcha tea and enjoy traditional sweets too.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+            Explore Temples & Shrines
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#touristAccordion">
+          <div class="accordion-body">
+            <img class="img-thumbnail uniform-thumb" src="images/japanese-shrine.jpg" alt="Traditional Japanese shrine with torii gate">
+            <p>Visit iconic temples like Fushimi Inari Shrine in Kyoto or Meiji Shrine in Tokyo. Purify your hands, walk the paths, and try an omikuji (fortune slip). Many shrines are surrounded by gardens and local food stalls for a full experience.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Scrollspy with Carousel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styling for scrollspy cards */
+    .scrollspy-section {
+      padding: 2rem 0;
+    }
+    
+    .card-scrollspy {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+    
+    .card-scrollspy:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-scrollspy.active {
+      border-left: 4px solid #0d6efd;
+    }
+    
+    /* Navigation styling */
+    .scrollspy-nav {
+      position: sticky;
+      top: 70px;
+      padding: 1rem;
+    }
+    
+    .scrollspy-nav-item {
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .scrollspy-nav-item:hover {
+      background-color: rgba(13, 110, 253, 0.1);
+    }
+    
+    .scrollspy-nav-item.active {
+      background-color: #0d6efd;
+      color: white;
+    }
+    
+    /* Carousel mode for small screens */
+    @media (max-width: 768px) {
+      .carousel-container {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+      
+      .carousel-item-wrapper {
+        flex: 0 0 85%;
+        margin-right: 15px;
+        scroll-snap-align: center;
+      }
+      
+      /* Hide the regular navigation on small screens */
+      .scrollspy-nav-desktop {
+        display: none;
+      }
+      
+      /* Show carousel navigation */
+      .carousel-controls {
+        display: flex !important;
+      }
+    }
+    
+    /* Hide carousel controls on large screens */
+    .carousel-controls {
+      display: none;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .carousel-control-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.5rem;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      cursor: pointer;
+    }
+    
+    .carousel-indicator {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #dee2e6;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    
+    .carousel-dot.active {
+      background-color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Navigation for Scrollspy -->
+      <div class="col-md-3">
+        <div class="scrollspy-nav scrollspy-nav-desktop" id="scrollspy-nav">
+          <div class="scrollspy-nav-item active" data-target="section1">Section 1</div>
+          <div class="scrollspy-nav-item" data-target="section2">Section 2</div>
+          <div class="scrollspy-nav-item" data-target="section3">Section 3</div>
+          <div class="scrollspy-nav-item" data-target="section4">Section 4</div>
+        </div>
+      </div>
+      
+      <!-- Content sections -->
+      <div class="col-md-9">
+        <!-- For mobile view (carousel) -->
+        <div class="carousel-controls">
+          <div class="carousel-control-btn prev-btn">⟨</div>
+          <div class="carousel-control-btn next-btn">⟩</div>
+        </div>
+        
+        <div class="carousel-container" id="scrollspy-content">
+          <!-- Section 1 -->
+          <div class="carousel-item-wrapper" id="section1">
+            <div class="card card-scrollspy active scrollspy-section">
+              <div class="card-body">
+                <h2 class="card-title">Section 1</h2>
+                <p class="card-text">This is the content for section 1. It explains important information about this topic.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section 2 -->
+          <div class="carousel-item-wrapper" id="section2">
+            <div class="card card-scrollspy scrollspy-section">
+              <div class="card-body">
+                <h2 class="card-title">Section 2</h2>
+                <p class="card-text">This is the content for section 2. It explores additional aspects of our topic.</p>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section 3 -->
+          <div class="carousel-item-wrapper" id="section3">
+            <div class="card card-scrollspy scrollspy-section">
+              <div class="card-body">
+                <h2 class="card-title">Section 3</h2>
+                <p class="card-text">This is the content for section 3. It provides more detailed information.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section 4 -->
+          <div class="carousel-item-wrapper" id="section4">
+            <div class="card card-scrollspy scrollspy-section">
+              <div class="card-body">
+                <h2 class="card-title">Section 4</h2>
+                <p class="card-text">This is the content for section 4. It concludes our discussion on this topic.</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Carousel indicators for mobile -->
+        <div class="carousel-indicator d-md-none">
+          <div class="carousel-dot active" data-target="section1"></div>
+          <div class="carousel-dot" data-target="section2"></div>
+          <div class="carousel-dot" data-target="section3"></div>
+          <div class="carousel-dot" data-target="section4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Scrollspy functionality
+      const navItems = document.querySelectorAll('.scrollspy-nav-item');
+      const sections = document.querySelectorAll('.scrollspy-section');
+      const carouselContainer = document.querySelector('.carousel-container');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      let currentIndex = 0;
+      
+      // For desktop scrollspy
+      function updateActive() {
+        const scrollPosition = window.scrollY;
+        
+        sections.forEach((section, index) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            // Remove active class from all nav items and sections
+            navItems.forEach(item => item.classList.remove('active'));
+            sections.forEach(sec => sec.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Add active class to current nav item and section
+            navItems[index].classList.add('active');
+            section.classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentIndex = index;
+          }
+        });
+      }
+      
+      // Add click event to navigation items
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const targetSection = document.getElementById(targetId);
+          
+          window.scrollTo({
+            top: targetSection.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // For mobile view, scroll carousel
+          if (window.innerWidth <= 768) {
+            const targetWrapper = document.querySelector(`#${targetId}`);
+            carouselContainer.scrollTo({
+              left: targetWrapper.offsetLeft - 20,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Carousel functionality for mobile
+      function scrollToSection(index) {
+        const targetSection = document.querySelectorAll('.carousel-item-wrapper')[index];
+        carouselContainer.scrollTo({
+          left: targetSection.offsetLeft - 20,
+          behavior: 'smooth'
+        });
+        
+        // Update active state
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        
+        currentIndex = index;
+      }
+      
+      // Add click event to dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          scrollToSection(index);
+        });
+      });
+      
+      // Next and previous buttons
+      nextBtn.addEventListener('click', function() {
+        const newIndex = currentIndex < sections.length - 1 ? currentIndex + 1 : 0;
+        scrollToSection(newIndex);
+      });
+      
+      prevBtn.addEventListener('click', function() {
+        const newIndex = currentIndex > 0 ? currentIndex - 1 : sections.length - 1;
+        scrollToSection(newIndex);
+      });
+      
+      // Handle scrolling in carousel to update dots
+      carouselContainer.addEventListener('scroll', function() {
+        const scrollLeft = carouselContainer.scrollLeft;
+        const containerWidth = carouselContainer.offsetWidth;
+        
+        document.querySelectorAll('.carousel-item-wrapper').forEach((item, index) => {
+          const itemLeft = item.offsetLeft - carouselContainer.offsetLeft;
+          const itemRight = itemLeft + item.offsetWidth;
+          
+          if (scrollLeft >= itemLeft - containerWidth/2 && scrollLeft < itemRight - containerWidth/2) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+          }
+        });
+      });
+      
+      // Initialize
+      window.addEventListener('scroll', updateActive);
+      updateActive();
+      
+      // Handle resize events
+      window.addEventListener('resize', function() {
+        updateActive();
+        if (window.innerWidth > 768) {
+          // Reset scroll position when returning to desktop
+          carouselContainer.scrollLeft = 0;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

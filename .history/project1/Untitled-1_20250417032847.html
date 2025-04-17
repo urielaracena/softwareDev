@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Scrollspy with Carousel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <h1 class="title text-center">Scrollspy</h1>
+
+<!-- Container for all scrollspy sections -->
+<div class="scrollspy-container">
+
+  <!-- First Scrollspy -->
+  <section class="scrollspyctnr bg-dark py-3 rounded mb-4">
+    <h2 class="text-light text-center">Popular Japanese Dishes</h2>
+    <div class="row">
+      <div class="col-4">
+        <div id="list" class="list-group">
+          <a class="list-group-item list-group-item-action active" href="#list-item-1">Sushi</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-2">Ramen</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-3">Unagi</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-4">Yakitori</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-5">Okonomiyaki</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-6">Katsu Curry</a>
+        </div>
+      </div>
+      
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#list" data-bs-smooth-scroll="true" class="scrollspy" tabindex="0">
+          <h4 id="list-item-1">Sushi</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/sushi.jpg" alt="Sushi plate with various nigiri and rolls">
+          <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables. The rice is seasoned with rice vinegar, sugar, and salt, then topped or filled with ingredients like tuna, salmon, yellowtail, shrimp, or cucumber.</p>
+          
+          <h4 id="list-item-2">Ramen</h4>
+          <img class="img-thumbnail uniform-thumb" style="height: 200px; object-fit: cover;" src="images/ramen.jpg" alt="Bowl of ramen with broth, noodles and toppings">
+          <p>A noodle soup dish featuring wheat noodles served in a meat-based broth, flavored with soy sauce or miso, and topped with ingredients like sliced pork (chashu), dried seaweed (nori), green onions, and soft-boiled eggs.</p>
+          
+          <h4 id="list-item-3">Unagi</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/unagi.jpg" alt="Grilled unagi eel on rice">
+          <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce and typically served over rice.</p>
+          
+          <h4 id="list-item-4">Yakitori</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/yakitori.jpg" alt="Grilled yakitori chicken skewers">
+          <p>Skewered chicken pieces grilled over charcoal. Different parts of the chicken are used including breast, thigh, skin, liver, heart, and cartilage, each offering distinct textures and flavors.</p>
+          
+          <h4 id="list-item-5">Okonomiyaki</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/okonomiyaki.jpg" alt="Okonomiyaki pancake topped with sauce and bonito flakes">
+          <p>A savory pancake containing a variety of ingredients in a wheat-flour-based batter. The batter includes grated nagaimo (mountain yam), dashi, eggs, and shredded cabbage.</p>
+          
+          <h4 id="list-item-6">Katsu Curry</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/katsu-curry.jpg" alt="Katsu curry with rice and breaded cutlet">
+          <p>A dish combining crispy breaded cutlet with Japanese curry sauce, served over rice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second Scrollspy -->
+  <section class="scrollspyctnr bg-dark py-3 rounded mb-4">
+    <h2 class="text-light text-center">Japanese Regional Cuisine</h2>
+    <div class="row">
+      <div class="col-4">
+        <div id="list-2" class="list-group">
+          <a class="list-group-item list-group-item-action active" href="#list-2-item-1">Hokkaido</a>
+          <a class="list-group-item list-group-item-action" href="#list-2-item-2">Tohoku</a>
+          <a class="list-group-item list-group-item-action" href="#list-2-item-3">Kanto</a>
+          <a class="list-group-item list-group-item-action" href="#list-2-item-4">Kansai</a>
+          <a class="list-group-item list-group-item-action" href="#list-2-item-5">Kyushu</a>
+          <a class="list-group-item list-group-item-action" href="#list-2-item-6">Okinawa</a>
+        </div>
+      </div>
+      
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#list-2" data-bs-smooth-scroll="true" class="scrollspy" tabindex="0">
+          <h4 id="list-2-item-1">Hokkaido</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/sushi.jpg" alt="Placeholder for Hokkaido cuisine">
+          <p>Known for fresh seafood, dairy products, and soup curry. Signature dishes include Genghis Khan (grilled lamb), fresh uni (sea urchin), and Sapporo ramen with miso-based broth.</p>
+          
+          <h4 id="list-2-item-2">Tohoku</h4>
+          <img class="img-thumbnail uniform-thumb" style="height: 200px; object-fit: cover;" src="images/ramen.jpg" alt="Placeholder for Tohoku cuisine">
+          <p>Features hearty dishes designed for cold winters. Specialties include kiritanpo (pounded rice on sticks), hittsumi (flat dumplings in soup), and jappa-jiru (fish head soup).</p>
+          
+          <h4 id="list-2-item-3">Kanto</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/unagi.jpg" alt="Placeholder for Kanto cuisine">
+          <p>Home to Tokyo's diverse food scene. Known for monjayaki (runny savory pancake), chanko nabe (sumo wrestler hotpot), and edomae-style sushi with pressed vinegared rice.</p>
+          
+          <h4 id="list-2-item-4">Kansai</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/yakitori.jpg" alt="Placeholder for Kansai cuisine">
+          <p>Centered around Osaka and Kyoto. Famous for takoyaki (octopus balls), Osaka-style okonomiyaki, and Kyoto's refined kaiseki multi-course meals and yudofu (hot tofu).</p>
+          
+          <h4 id="list-2-item-5">Kyushu</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/okonomiyaki.jpg" alt="Placeholder for Kyushu cuisine">
+          <p>Known for tonkotsu ramen with rich pork bone broth from Hakata, mentaiko (spicy cod roe), and Nagasaki champon noodle soup with seafood and vegetables.</p>
+          
+          <h4 id="list-2-item-6">Okinawa</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/katsu-curry.jpg" alt="Placeholder for Okinawa cuisine">
+          <p>Distinct island cuisine influenced by Chinese and Southeast Asian flavors. Specialties include goya champuru (bitter melon stir-fry), Okinawa soba, and rafute (stewed pork belly).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Third Scrollspy -->
+  <section class="scrollspyctnr bg-dark py-3 rounded mb-4">
+    <h2 class="text-light text-center">Japanese Dining Traditions</h2>
+    <div class="row">
+      <div class="col-4">
+        <div id="list-3" class="list-group">
+          <a class="list-group-item list-group-item-action active" href="#list-3-item-1">Kaiseki</a>
+          <a class="list-group-item list-group-item-action" href="#list-3-item-2">Izakaya</a>
+          <a class="list-group-item list-group-item-action" href="#list-3-item-3">Omakase</a>
+          <a class="list-group-item list-group-item-action" href="#list-3-item-4">Ryokan Meals</a>
+          <a class="list-group-item list-group-item-action" href="#list-3-item-5">Tea Ceremony</a>
+          <a class="list-group-item list-group-item-action" href="#list-3-item-6">Bentō</a>
+        </div>
+      </div>
+      
+      <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#list-3" data-bs-smooth-scroll="true" class="scrollspy" tabindex="0">
+          <h4 id="list-3-item-1">Kaiseki</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/sushi.jpg" alt="Placeholder for kaiseki meal">
+          <p>Traditional multi-course Japanese dinner with precisely prepared dishes showcasing seasonal ingredients. Each small dish is artistically presented to enhance both taste and visual appeal.</p>
+          
+          <h4 id="list-3-item-2">Izakaya</h4>
+          <img class="img-thumbnail uniform-thumb" style="height: 200px; object-fit: cover;" src="images/ramen.jpg" alt="Placeholder for izakaya setting">
+          <p>Casual drinking establishments serving a variety of small, shareable dishes designed to accompany alcoholic beverages. A central part of Japan's after-work social culture.</p>
+          
+          <h4 id="list-3-item-3">Omakase</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/unagi.jpg" alt="Placeholder for omakase dining">
+          <p>A chef's choice menu where diners leave their meal entirely up to the chef. Common in sushi restaurants, showcasing the chef's expertise and the freshest available ingredients.</p>
+          
+          <h4 id="list-3-item-4">Ryokan Meals</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/yakitori.jpg" alt="Placeholder for ryokan meal">
+          <p>Elaborate meals served in traditional Japanese inns, typically featuring seasonal local specialties. Often served in guests' rooms or private dining areas on low tables.</p>
+          
+          <h4 id="list-3-item-5">Tea Ceremony</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/okonomiyaki.jpg" alt="Placeholder for tea ceremony">
+          <p>Ritualized preparation and presentation of matcha (powdered green tea), emphasizing mindfulness and respect. Often accompanied by small traditional sweets to balance the tea's bitterness.</p>
+          
+          <h4 id="list-3-item-6">Bentō</h4>
+          <img class="img-thumbnail uniform-thumb" src="images/katsu-curry.jpg" alt="Placeholder for bento box">
+          <p>Single-portion takeout or home-packed meals in compartmentalized boxes. Traditional bento contains rice, protein, and various side dishes arranged aesthetically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Carousel Indicator Dots -->
+  <div class="carousel-indicators">
+    <input type="radio" name="carousel-indicator" id="slide1" checked>
+    <label for="slide1" class="indicator"></label>
+    
+    <input type="radio" name="carousel-indicator" id="slide2">
+    <label for="slide2" class="indicator"></label>
+    
+    <input type="radio" name="carousel-indicator" id="slide3">
+    <label for="slide3" class="indicator"></label>
+  </div>
+
+</div>
+
+<style>
+/* Existing styles for scrollspy */
+.scrollspy {
+  position: relative;
+  height: 350px;
+  overflow-y: auto;
+}
+
+.uniform-thumb {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* Container styling */
+.scrollspy-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Scrollspy section width */
+.scrollspyctnr {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Desktop layout (flex) */
+@media (min-width: 992px) {
+  .scrollspy-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .scrollspyctnr {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+  }
+  
+  /* Hide carousel indicators on desktop */
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+/* Mobile carousel layout */
+@media (max-width: 991px) {
+  .scrollspy-container {
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding-bottom: 40px;  /* Space for indicators */
+  }
+  
+  .scrollspyctnr {
+    flex: 0 0 90%;
+    width: 90%;
+    scroll-snap-align: center;
+    margin-right: 20px;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .scrollspy-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollspy-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Carousel indicators */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+  }
+  
+  .carousel-indicators input {
+    display: none;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #slide1:checked ~ .scrollspyctnr:nth-child(1) {
+    scroll-snap-align: center;
+  }
+  
+  #slide2:checked ~ .scrollspyctnr:nth-child(2) {
+    scroll-snap-align: center;
+  }
+  
+  #slide3:checked ~ .scrollspyctnr:nth-child(3) {
+    scroll-snap-align: center;
+  }
+  
+  #slide1:checked + label {
+    background-color: #0d6efd;
+  }
+  
+  #slide2:checked + label {
+    background-color: #0d6efd;
+  }
+  
+  #slide3:checked + label {
+    background-color: #0d6efd;
+  }
+}
+</style>
+
+<!-- Add Bootstrap CSS and JS for scrollspy functionality -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</script>
+</body>
+</html>
