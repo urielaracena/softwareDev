@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,6 @@
     <title>Discover Japan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="project1style.css">
-    
 </head>
 <body>
     <!-- Navbar -->
@@ -64,102 +62,102 @@
     </section>
 
     <!-- Cuisine Section -->
-    <section id="cuisine" class="category-section py-5">
+    <section id="cuisine" class="category-section">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Japanese Cuisine</h2>
+            <h2 class="section-title">Japanese Cuisine</h2>
 
             <!-- Tabs Menu -->
             <div class="row">
                 <!-- Horizontal tabs for small screens -->
                 <div class="col-12 mb-4 d-lg-none">
-                    <div class="nav nav-pills d-flex flex-nowrap overflow-auto cuisine-tabs-mobile" id="cuisine-tabs-mobile" role="tablist">
-                        <button class="nav-link active" id="sushi-tab-mobile" data-bs-toggle="tab" data-bs-target="#sushi" type="button" role="tab" aria-controls="sushi" aria-selected="true">Sushi</button>
-                        <button class="nav-link" id="ramen-tab-mobile" data-bs-toggle="tab" data-bs-target="#ramen" type="button" role="tab" aria-controls="ramen" aria-selected="false">Ramen</button>
-                        <button class="nav-link" id="unagi-tab-mobile" data-bs-toggle="tab" data-bs-target="#unagi" type="button" role="tab" aria-controls="unagi" aria-selected="false">Unagi</button>
-                        <button class="nav-link" id="yakitori-tab-mobile" data-bs-toggle="tab" data-bs-target="#yakitori" type="button" role="tab" aria-controls="yakitori" aria-selected="false">Yakitori</button>
-                        <button class="nav-link" id="okonomiyaki-tab-mobile" data-bs-toggle="tab" data-bs-target="#okonomiyaki" type="button" role="tab" aria-controls="okonomiyaki" aria-selected="false">Okonomiyaki</button>
-                        <button class="nav-link" id="curry-tab-mobile" data-bs-toggle="tab" data-bs-target="#curry" type="button" role="tab" aria-controls="curry" aria-selected="false">Katsu Curry</button>
+                    <div class="nav nav-pills d-flex flex-nowrap overflow-auto cuisine-tabs-mobile" id="cuisine-tabs-mobile">
+                        <button class="nav-link active me-2" id="sushi-tab-mobile" data-bs-toggle="pill" data-bs-target="#sushi">Sushi</button>
+                        <button class="nav-link me-2" id="ramen-tab-mobile" data-bs-toggle="pill" data-bs-target="#ramen">Ramen</button>
+                        <button class="nav-link me-2" id="unagi-tab-mobile" data-bs-toggle="pill" data-bs-target="#unagi">Unagi</button>
+                        <button class="nav-link me-2" id="yakitori-tab-mobile" data-bs-toggle="pill" data-bs-target="#yakitori">Yakitori</button>
+                        <button class="nav-link me-2" id="okonomiyaki-tab-mobile" data-bs-toggle="pill" data-bs-target="#okonomiyaki">Okonomiyaki</button>
+                        <button class="nav-link me-2" id="curry-tab-mobile" data-bs-toggle="pill" data-bs-target="#curry">Katsu Curry</button>
                     </div>
                 </div>
 
                 <!-- Vertical Tabs for Large Screens -->
                 <div class="col-lg-3 d-none d-lg-block mb-4">
-                    <div class="nav flex-column nav-pills category-tabs" id="cuisine-tabs" role="tablist">
-                        <button class="nav-link active" id="sushi-tab" data-bs-toggle="tab" data-bs-target="#sushi" type="button" role="tab" aria-controls="sushi" aria-selected="true">Sushi</button>
-                        <button class="nav-link" id="ramen-tab" data-bs-toggle="tab" data-bs-target="#ramen" type="button" role="tab" aria-controls="ramen" aria-selected="false">Ramen</button>
-                        <button class="nav-link" id="unagi-tab" data-bs-toggle="tab" data-bs-target="#unagi" type="button" role="tab" aria-controls="unagi" aria-selected="false">Unagi</button>
-                        <button class="nav-link" id="yakitori-tab" data-bs-toggle="tab" data-bs-target="#yakitori" type="button" role="tab" aria-controls="yakitori" aria-selected="false">Yakitori</button>
-                        <button class="nav-link" id="okonomiyaki-tab" data-bs-toggle="tab" data-bs-target="#okonomiyaki" type="button" role="tab" aria-controls="okonomiyaki" aria-selected="false">Okonomiyaki</button>
-                        <button class="nav-link" id="curry-tab" data-bs-toggle="tab" data-bs-target="#curry" type="button" role="tab" aria-controls="curry" aria-selected="false">Katsu Curry</button>
+                    <div class="d-flex flex-column category-tabs">
+                        <button class="category-tab active" id="sushi-tab" data-bs-toggle="pill" data-bs-target="#sushi">Sushi</button>
+                        <button class="category-tab" id="ramen-tab" data-bs-toggle="pill" data-bs-target="#ramen">Ramen</button>
+                        <button class="category-tab" id="unagi-tab" data-bs-toggle="pill" data-bs-target="#unagi">Unagi</button>
+                        <button class="category-tab" id="yakitori-tab" data-bs-toggle="pill" data-bs-target="#yakitori">Yakitori</button>
+                        <button class="category-tab" id="okonomiyaki-tab" data-bs-toggle="pill" data-bs-target="#okonomiyaki">Okonomiyaki</button>
+                        <button class="category-tab" id="curry-tab" data-bs-toggle="pill" data-bs-target="#curry">Katsu Curry</button>
                     </div>
                 </div>
 
                 <!-- Tab Content -->
                 <div class="col-lg-9">
-                    <div class="tab-content category-content" id="cuisine-tab-content">
-                        <div class="tab-pane fade show active" id="sushi" role="tabpanel" aria-labelledby="sushi-tab">
+                    <div class="tab-content category-content">
+                        <div class="tab-pane fade show active" id="sushi">
                             <div class="row align-items-center">
                                 <div class="col-md-5 mb-3 mb-md-0">
                                     <img src="images/sushi.jpg" alt="Sushi plate with various nigiri and rolls" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Sushi</h3>
-                                    <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables</p>
+                                    <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables...</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="ramen" role="tabpanel" aria-labelledby="ramen-tab">
+                        <div class="tab-pane fade" id="ramen">
                             <div class="row align-items-center">
                                 <div class="col-md-5 mb-3 mb-md-0">
                                     <img src="images/ramen.jpg" alt="Bowl of ramen with broth, noodles and toppings" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Ramen</h3>
-                                    <p>A noodle soup dish featuring wheat noodles served in a meat-based broth</p>
+                                    <p>A noodle soup dish featuring wheat noodles served in a meat-based broth...</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="unagi" role="tabpanel" aria-labelledby="unagi-tab">
+                        <div class="tab-pane fade" id="unagi">
                             <div class="row align-items-center">
                                 <div class="col-md-5 mb-3 mb-md-0">
                                     <img src="images/unagi.jpg" alt="Grilled unagi eel on rice" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Unagi</h3>
-                                    <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce<p>
+                                    <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce...</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="yakitori" role="tabpanel" aria-labelledby="yakitori-tab">
+                        <div class="tab-pane fade" id="yakitori">
                             <div class="row align-items-center">
                                 <div class="col-md-5 mb-3 mb-md-0">
                                     <img src="images/yakitori.jpg" alt="Grilled yakitori chicken skewers" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Yakitori</h3>
-                                    <p>Skewered chicken pieces grilled over charcoal, served with tare or salt</p>
+                                    <p>Skewered chicken pieces grilled over charcoal, served with tare or salt...</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="okonomiyaki" role="tabpanel" aria-labelledby="okonomiyaki-tab">
+                        <div class="tab-pane fade" id="okonomiyaki">
                             <div class="row align-items-center">
                                 <div class="col-md-5 mb-3 mb-md-0">
                                     <img src="images/okonomiyaki.jpg" alt="Okonomiyaki pancake topped with sauce and bonito flakes" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Okonomiyaki</h3>
-                                    <p>A savory pancake with a variety of ingredients, including shredded cabbage</p>
+                                    <p>A savory pancake with a variety of ingredients, including shredded cabbage...</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="curry" role="tabpanel" aria-labelledby="curry-tab">
+                        <div class="tab-pane fade" id="curry">
                             <div class="row align-items-center">
                                 <div class="col-md-5 mb-3 mb-md-0">
                                     <img src="images/katsu-curry.jpg" alt="Katsu curry with rice and breaded cutlet" class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Katsu Curry</h3>
-                                    <p>A dish combining crispy breaded cutlet with Japanese curry sauce</p>
+                                    <p>A dish combining crispy breaded cutlet with Japanese curry sauce...</p>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +169,7 @@
 
     <!-- Nature Section -->
     <section id="nature" class="container py-5">
-        <h2 class="section-title text-center mb-5">Beautiful Japanese Flora</h2>
+        <h2 class="section-title text-center mb-4">Beautiful Japanese Flora</h2>
         <div id="floraCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -181,45 +179,45 @@
                 <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
                 <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner rounded shadow">
                 <div class="carousel-item active">
                     <img src="images/japanese-maple.jpg" class="d-block w-100" alt="Japanese Maple">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Maple</h5>
                         <p>Vibrant foliage that transforms from spring greens to fiery autumn reds.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-sakura.jpg" class="d-block w-100" alt="Sakura">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Sakura (Cherry Blossom)</h5>
                         <p>Delicate blossoms creating clouds of white and pink in spring.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-peony.jpg" class="d-block w-100" alt="Peony">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Peony</h5>
                         <p>Massive blooms with ruffled petals in vivid, dramatic colors.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-iris.jpeg" class="d-block w-100" alt="Iris">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Iris</h5>
                         <p>Elegant flowers with bold color patterns and sword-like leaves.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-nandina.jpg" class="d-block w-100" alt="Nandina">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Nandina</h5>
                         <p>Color-changing foliage and bright red winter berries.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-camellia.jpg" class="d-block w-100" alt="Camellia">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Camellia</h5>
                         <p>Winter-blooming flowers in white, pink, and red.</p>
                     </div>
@@ -242,6 +240,7 @@
         <div class="container">
             <h2 class="section-title mb-5">Top Japanese Activities</h2>
             <div class="row g-4">
+                <!-- Card Start -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -257,6 +256,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Repeat Cards Below -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -272,6 +272,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Animal Café -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <a href="sub_page1.html">
@@ -289,6 +290,7 @@
                         </a>
                     </div>
                 </div>
+                <!-- Japanese Castle -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -304,6 +306,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Tea Ceremony -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -319,6 +322,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Shrines & Temples -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -334,8 +338,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
     </section>
 
     <!-- Gallery Section -->
@@ -368,24 +372,5 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-XrPpZKi4zH+ZQDb5iJX44D4k9Z+oB4FyoF8RLr4ZgSh4Ckxnp8L2PjR0gxTIcQdX" crossorigin="anonymous"></script>
-    <!-- Fallback JavaScript for tabs -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize Bootstrap tabs manually if needed
-            const tabLinks = document.querySelectorAll('#cuisine-tabs .nav-link, #cuisine-tabs-mobile .nav-link');
-            tabLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('data-bs-target'));
-                    const allPanes = document.querySelectorAll('.tab-pane');
-                    const allLinks = document.querySelectorAll('.nav-link');
-                    
-                    allPanes.forEach(pane => pane.classList.remove('show', 'active'));
-                    allLinks.forEach(link => link.classList.remove('active'));
-                    
-                    target.classList.add('show', 'active');
-                    this.classList.add('active');
-                });
-            });
-        });
-    </script>
+</body>
+</html>

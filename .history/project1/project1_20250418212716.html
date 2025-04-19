@@ -7,7 +7,13 @@
     <title>Discover Japan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="project1style.css">
-    
+    <style>
+        /* Card hover effect for text */
+        .card:hover .card-title,
+        .card:hover .card-text {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -64,9 +70,9 @@
     </section>
 
     <!-- Cuisine Section -->
-    <section id="cuisine" class="category-section py-5">
+    <section id="cuisine" class="category-section">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Japanese Cuisine</h2>
+            <h2 class="section-title">Japanese Cuisine</h2>
 
             <!-- Tabs Menu -->
             <div class="row">
@@ -104,7 +110,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Sushi</h3>
-                                    <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables</p>
+                                    <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables...</p>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +121,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Ramen</h3>
-                                    <p>A noodle soup dish featuring wheat noodles served in a meat-based broth</p>
+                                    <p>A noodle soup dish featuring wheat noodles served in a meat-based broth...</p>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +132,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Unagi</h3>
-                                    <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce<p>
+                                    <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce...</p>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +143,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Yakitori</h3>
-                                    <p>Skewered chicken pieces grilled over charcoal, served with tare or salt</p>
+                                    <p>Skewered chicken pieces grilled over charcoal, served with tare or salt...</p>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +154,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Okonomiyaki</h3>
-                                    <p>A savory pancake with a variety of ingredients, including shredded cabbage</p>
+                                    <p>A savory pancake with a variety of ingredients, including shredded cabbage...</p>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +165,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h3 class="mb-3">Katsu Curry</h3>
-                                    <p>A dish combining crispy breaded cutlet with Japanese curry sauce</p>
+                                    <p>A dish combining crispy breaded cutlet with Japanese curry sauce...</p>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +177,7 @@
 
     <!-- Nature Section -->
     <section id="nature" class="container py-5">
-        <h2 class="section-title text-center mb-5">Beautiful Japanese Flora</h2>
+        <h2 class="section-title text-center mb-4">Beautiful Japanese Flora</h2>
         <div id="floraCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -181,45 +187,45 @@
                 <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
                 <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner rounded shadow">
                 <div class="carousel-item active">
                     <img src="images/japanese-maple.jpg" class="d-block w-100" alt="Japanese Maple">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Maple</h5>
                         <p>Vibrant foliage that transforms from spring greens to fiery autumn reds.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-sakura.jpg" class="d-block w-100" alt="Sakura">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Sakura (Cherry Blossom)</h5>
                         <p>Delicate blossoms creating clouds of white and pink in spring.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-peony.jpg" class="d-block w-100" alt="Peony">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Peony</h5>
                         <p>Massive blooms with ruffled petals in vivid, dramatic colors.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-iris.jpeg" class="d-block w-100" alt="Iris">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Iris</h5>
                         <p>Elegant flowers with bold color patterns and sword-like leaves.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-nandina.jpg" class="d-block w-100" alt="Nandina">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Nandina</h5>
                         <p>Color-changing foliage and bright red winter berries.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/japanese-camellia.jpg" class="d-block w-100" alt="Camellia">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
                         <h5>Japanese Camellia</h5>
                         <p>Winter-blooming flowers in white, pink, and red.</p>
                     </div>
@@ -242,6 +248,7 @@
         <div class="container">
             <h2 class="section-title mb-5">Top Japanese Activities</h2>
             <div class="row g-4">
+                <!-- Card Start -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -257,6 +264,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Repeat Cards Below -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -272,6 +280,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Animal Café -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <a href="sub_page1.html">
@@ -289,6 +298,7 @@
                         </a>
                     </div>
                 </div>
+                <!-- Japanese Castle -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -304,6 +314,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Tea Ceremony -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -319,6 +330,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Shrines & Temples -->
                 <div class="col-lg-6">
                     <div class="card h-100">
                         <div class="row g-0 h-100">
@@ -334,8 +346,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
     </section>
 
     <!-- Gallery Section -->
@@ -368,24 +380,5 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-XrPpZKi4zH+ZQDb5iJX44D4k9Z+oB4FyoF8RLr4ZgSh4Ckxnp8L2PjR0gxTIcQdX" crossorigin="anonymous"></script>
-    <!-- Fallback JavaScript for tabs -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize Bootstrap tabs manually if needed
-            const tabLinks = document.querySelectorAll('#cuisine-tabs .nav-link, #cuisine-tabs-mobile .nav-link');
-            tabLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('data-bs-target'));
-                    const allPanes = document.querySelectorAll('.tab-pane');
-                    const allLinks = document.querySelectorAll('.nav-link');
-                    
-                    allPanes.forEach(pane => pane.classList.remove('show', 'active'));
-                    allLinks.forEach(link => link.classList.remove('active'));
-                    
-                    target.classList.add('show', 'active');
-                    this.classList.add('active');
-                });
-            });
-        });
-    </script>
+</body>
+</html>

@@ -256,10 +256,6 @@
     border-color: var(--primary);
   }
 
-  .carousel-inner img {
-    max-height: 550px;
-    object-fit: cover;
-  }
   
   
   /* Activities section */

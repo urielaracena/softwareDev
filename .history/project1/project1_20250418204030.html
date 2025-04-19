@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Japan - Discover The Land of the Rising Sun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="project1style.css">
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/japan-logo.jpeg" alt="Logo" class="d-inline-block align-text-top logo-img">
+          Discover Japan
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cuisine">Cuisine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nature">Nature</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#activities">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content hover-wrapper">
+        <h1 class="hero-title">Discover <span class="highlight-word">Japan</span></h1>
+        <p class="hero-subtitle">Experience the perfect harmony of ancient traditions and modern innovations</p>
+        <a href="#activities" class="btn btn-danger hero-btn hover-btn">Explore Now</a>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title">Welcome to Japan</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <p class="lead mb-4">Japan offers a captivating blend of ancient traditions and cutting-edge modernity. From tranquil temples and cherry blossoms to bustling cities and technological marvels, immerse yourself in a culture unlike any other.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Cuisine Section -->
+   <section id="cuisine" class="category-section">
+    <div class="container">
+      <h2 class="section-title">Japanese Cuisine</h2>
+      
+      <div class="row">
+        <!-- On small screens, this becomes a horizontal scrolling menu -->
+        <div class="col-12 mb-4 d-lg-none">
+          <div class="nav nav-pills d-flex flex-nowrap overflow-auto cuisine-tabs-mobile" id="cuisine-tabs-mobile">
+            <button class="nav-link active me-2" id="sushi-tab-mobile" data-bs-toggle="pill" data-bs-target="#sushi">Sushi</button>
+            <button class="nav-link me-2" id="ramen-tab-mobile" data-bs-toggle="pill" data-bs-target="#ramen">Ramen</button>
+            <button class="nav-link me-2" id="unagi-tab-mobile" data-bs-toggle="pill" data-bs-target="#unagi">Unagi</button>
+            <button class="nav-link me-2" id="yakitori-tab-mobile" data-bs-toggle="pill" data-bs-target="#yakitori">Yakitori</button>
+            <button class="nav-link me-2" id="okonomiyaki-tab-mobile" data-bs-toggle="pill" data-bs-target="#okonomiyaki">Okonomiyaki</button>
+            <button class="nav-link me-2" id="curry-tab-mobile" data-bs-toggle="pill" data-bs-target="#curry">Katsu Curry</button>
+          </div>
+        </div>
+        
+        <!-- Desktop version of tabs -->
+        <div class="col-lg-3 d-none d-lg-block mb-4">
+          <div class="d-flex flex-column category-tabs">
+            <button class="category-tab active" id="sushi-tab" data-bs-toggle="pill" data-bs-target="#sushi">Sushi</button>
+            <button class="category-tab" id="ramen-tab" data-bs-toggle="pill" data-bs-target="#ramen">Ramen</button>
+            <button class="category-tab" id="unagi-tab" data-bs-toggle="pill" data-bs-target="#unagi">Unagi</button>
+            <button class="category-tab" id="yakitori-tab" data-bs-toggle="pill" data-bs-target="#yakitori">Yakitori</button>
+            <button class="category-tab" id="okonomiyaki-tab" data-bs-toggle="pill" data-bs-target="#okonomiyaki">Okonomiyaki</button>
+            <button class="category-tab" id="curry-tab" data-bs-toggle="pill" data-bs-target="#curry">Katsu Curry</button>
+          </div>
+        </div>
+        
+        <!-- Tab content area -->
+        <div class="col-lg-9">
+          <div class="tab-content category-content">
+            <!-- Sushi Tab Content -->
+            <div class="tab-pane fade show active" id="sushi">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                  <img src="images/sushi.jpg" alt="Sushi plate with various nigiri and rolls" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                  <h3 class="mb-3">Sushi</h3>
+                  <p>A dish of vinegared rice combined with fresh raw fish, seafood, or vegetables...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ramen Tab Content -->
+            <div class="tab-pane fade" id="ramen">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                  <img src="images/ramen.jpg" alt="Bowl of ramen with broth, noodles and toppings" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                  <h3 class="mb-3">Ramen</h3>
+                  <p>A noodle soup dish featuring wheat noodles served in a meat-based broth...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unagi Tab Content -->
+            <div class="tab-pane fade" id="unagi">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                  <img src="images/unagi.jpg" alt="Grilled unagi eel on rice" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                  <h3 class="mb-3">Unagi</h3>
+                  <p>A traditional delicacy of freshwater eel grilled with a sweet soy-based sauce...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Yakitori Tab Content -->
+            <div class="tab-pane fade" id="yakitori">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                  <img src="images/yakitori.jpg" alt="Grilled yakitori chicken skewers" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                  <h3 class="mb-3">Yakitori</h3>
+                  <p>Skewered chicken pieces grilled over charcoal...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Okonomiyaki Tab Content -->
+            <div class="tab-pane fade" id="okonomiyaki">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                  <img src="images/okonomiyaki.jpg" alt="Okonomiyaki pancake topped with sauce and bonito flakes" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                  <h3 class="mb-3">Okonomiyaki</h3>
+                  <p>A savory pancake containing a variety of ingredients in a wheat-flour-based batter...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Katsu Curry Tab Content -->
+            <div class="tab-pane fade" id="curry">
+              <div class="row align-items-center">
+                <div class="col-md-5 mb-3 mb-md-0">
+                  <img src="images/katsu-curry.jpg" alt="Katsu curry with rice and breaded cutlet" class="img-fluid rounded">
+                </div>
+                <div class="col-md-7">
+                  <h3 class="mb-3">Katsu Curry</h3>
+                  <p>A dish combining crispy breaded cutlet with Japanese curry sauce...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Nature Section -->
+<section class="scrollspyctnr container bg-dark py-3 rounded">
+    <h2 class="text-light text-center">Beautiful Japanese Flora</h2>
+    <div class="row">
+        <div class="col-4">
+            <div id="list" class="list-group">
+                <a class="list-group-item list-group-item-action active" href="#list-item-1">Japanese Maple</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">Sakura (Cherry Blossom)</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">Japanese Peony</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">Japanese Iris</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-5">Nandina</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-6">Japanese Camellia</a>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div data-bs-spy="scroll" data-bs-target="#list" data-bs-smooth-scroll="true" class="scrollspy" tabindex="0">
+                <h4 id="list-item-1">Japanese Maple</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/japanese-maple.jpg" alt="Japanese maple with vibrant red foliage">
+                <p>Renowned for spectacular foliage displays with delicate, palmate leaves that transform from vibrant spring colors to fiery autumn shades. Hundreds of cultivars offer variations in leaf shape, size, and color, creating dappled shade and airy lightness in garden settings.</p>
+                
+                <h4 id="list-item-2">Sakura (Cherry Blossom)</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/japanese-sakura.jpg" alt="Cherry blossom tree in full bloom">
+                <p>Japan's most iconic flower produces delicate five-petaled blossoms ranging from white to pink. Blooms appear in dramatic profusion along branches before leaves emerge, creating ethereal clouds of color that last just 1-2 weeks, embodying the Japanese aesthetic principle of mono no aware.</p>
+                
+                <h4 id="list-item-3">Japanese Peony</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/japanese-peony.jpg" alt="Lush Japanese tree peony blooms">
+                <p>Tree peonies produce spectacular dinner-plate sized blooms measuring 8-12 inches across with silky, ruffled petals in colors ranging from pure white to nearly black purple. These woody shrubs maintain their structure year-round with deeply lobed, blue-green leaves that turn bronze-purple in fall.</p>
+                
+                <h4 id="list-item-4">Japanese Iris</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/japanese-iris.jpeg" alt="Japanese iris flowers in purple and white">
+                <p>Produces elegant flowers with six flattened petals that spread horizontally. These striking 4-6 inch blooms appear in early summer in colors from white to purple, often with contrasting veining or edges. The plants form clumps of tall, blade-like foliage reaching 2-4 feet high.</p>
+                
+                <h4 id="list-item-5">Nandina</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/japanese-nandina.jpg" alt="Nandina with red berries and colorful foliage">
+                <p>Offers year-round interest with constantly changing foliage colors. Its pinnately compound leaves emerge coppery-pink before turning blue-green in summer and brilliant red-orange in autumn. In winter, bright red berries persist, creating striking contrast against the colorful foliage.</p>
+                
+                <h4 id="list-item-6">Japanese Camellia</h4>
+                <img class="img-thumbnail uniform-thumb" src="images/japanese-camellia.jpg" alt="Pink camellia japonica flower">
+                <p>Brings exceptional floral beauty during winter with large, perfectly formed flowers in shades from white to deep red. The blooms can be simple singles with golden stamens or complex peony forms, set against glossy dark green foliage that provides excellent garden structure year-round.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Activities Section -->
+    <section id="activities" class="category-section py-5">
+        <div class="container">
+          <h2 class="section-title mb-5">Top Japanese Activities</h2>
+      
+          <div class="row g-4">
+            <!-- Card Start -->
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="row g-0 h-100">
+                  <div class="col-md-6">
+                    <img src="images/onsen.jpg" alt="Traditional Japanese outdoor hot spring bath" class="img-fluid h-100 w-100 object-fit-cover">
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h5 class="card-title">Relax in an Onsen</h5>
+                      <p class="card-text">Experience the therapeutic mineral-rich waters of Japan's hot springs, often set in beautiful natural surroundings...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Repeat Cards Below -->
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="row g-0 h-100">
+                  <div class="col-md-6">
+                    <img src="images/cherry-blossom-view.jpg" alt="Cherry blossom viewing picnic" class="img-fluid h-100 w-100 object-fit-cover">
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h5 class="card-title">Cherry Blossom Viewing</h5>
+                      <p class="card-text">Join the centuries-old tradition of hanami during spring...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Animal Café -->
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <a href="sub_page1.html">
+                <div class="row g-0 h-100">
+                  <div class="col-md-6">
+                    <img src="images/animal-cafe.jpg" alt="Shiba Inu at a Japanese animal cafe" class="img-fluid h-100 w-100 object-fit-cover">
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h5 class="card-title">Visit an Animal Café</h5>
+                      <p class="card-text">Enjoy a unique experience at Japan's animal cafés, where you can sip drinks while interacting with cats, owls, hedgehogs, or Shiba Inus...</p>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Japanese Castle -->
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="row g-0 h-100">
+                  <div class="col-md-6">
+                    <img src="images/japanese-castle.jpg" alt="Scenic view of Himeji Castle" class="img-fluid h-100 w-100 object-fit-cover">
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h5 class="card-title">Explore a Japanese Castle</h5>
+                      <p class="card-text">Step back into the age of samurai at Japan's magnificently preserved castles...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Tea Ceremony -->
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="row g-0 h-100">
+                  <div class="col-md-6">
+                    <img src="images/tea-ceremony.jpg" alt="Traditional Japanese tea ceremony" class="img-fluid h-100 w-100 object-fit-cover">
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h5 class="card-title">Experience a Tea Ceremony</h5>
+                      <p class="card-text">Participate in this centuries-old ritual that embodies harmony, respect, purity, and tranquility...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Shrines & Temples -->
+            <div class="col-lg-6">
+              <div class="card h-100">
+                <div class="row g-0 h-100">
+                  <div class="col-md-6">
+                    <img src="images/japanese-shrine.jpg" alt="Japanese shrine with torii gate" class="img-fluid h-100 w-100 object-fit-cover">
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h5 class="card-title">Explore Temples & Shrines</h5>
+                      <p class="card-text">Discover Japan's spiritual heritage at its beautiful temples and shrines...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div> <!-- row -->
+        </div> <!-- container -->
+      </section>
+      
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Japan Gallery</h2>
+        <div class="row">
+          <!-- Gllery content here -->
+          <p class="text-center">Gallery content coming soon...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Discover Japan</h5>
+            <p>Experience the perfect harmony of ancient traditions and modern innovations.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; 2025 Japan Tourism. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-XrPpZKi4zH+ZQDb5iJX44D4k9Z+oB4FyoF8RLr4ZgSh4Ckxnp8L2PjR0gxTIcQdX" crossorigin="anonymous"></script>
+  </body>
+</html>
