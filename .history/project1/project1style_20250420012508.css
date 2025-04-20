@@ -133,6 +133,73 @@ section {
     transform: translateX(-50%);
 }
 
+/* Nature section */
+.nature-section {
+    background-color: #f8f9fa;
+}
+
+.scrollspy {
+    position: relative;
+    height: 450px;
+    overflow: auto;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.uniform-thumb {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    text-align: center;
+    color: var(--secondary);
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.scrollspy p {
+    text-indent: 10%;
+    line-height: 1.6;
+}
+
+.scrollspy::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollspy::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.scrollspy::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.list-group-item.active {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+}
+
+.list-group-item:focus {
+    outline: none;
+}
+
+.list-group-item {
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover:not(.active) {
+    background-color: rgba(229, 62, 62, 0.1);
+}
+
 /* Category section */
 .category-section {
     background-color: #f8f9fa;
@@ -193,6 +260,7 @@ section {
     color: white !important;
     border-color: var(--primary);
 }
+
 
 /* Activities section */
 .activities-section {

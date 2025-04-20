@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discover Japan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="project1style.css">
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/japan-logo.jpeg" alt="Discover Japan Logo" class="d-inline-block align-text-top logo-img">
+                Discover Japan
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cuisine">Cuisine</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nature">Nature</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#activities">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content hover-wrapper">
+            <h1 class="hero-title">Discover <span class="highlight-word">Japan</span></h1>
+            <p class="hero-subtitle">Experience the perfect harmony of ancient traditions and modern innovations</p>
+            <a href="#activities" class="btn btn-danger hero-btn hover-btn">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Welcome to Japan</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="lead mb-4">Japan offers a captivating blend of ancient traditions and cutting-edge modernity. From tranquil temples and cherry blossoms to bustling cities and technological marvels, immerse yourself in a culture unlike any other.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Section -->
+    <section id="cuisine" class="category-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Japanese Cuisine</h2>
+
+            <!-- Tabs Menu -->
+            <div class="row">
+                <!-- Horizontal tabs for small screens -->
+                <div class="col-12 mb-4 d-lg-none">
+                    <div class="nav nav-pills d-flex flex-nowrap overflow-auto cuisine-tabs-mobile" id="cuisine-tabs-mobile" role="tablist">
+                        <button class="nav-link active" id="sushi-tab-mobile" data-bs-toggle="tab" data-bs-target="#sushi" type="button" role="tab" aria-controls="sushi" aria-selected="true">Sushi</button>
+                        <button class="nav-link" id="ramen-tab-mobile" data-bs-toggle="tab" data-bs-target="#ramen" type="button" role="tab" aria-controls="ramen" aria-selected="false">Ramen</button>
+                        <button class="nav-link" id="unagi-tab-mobile" data-bs-toggle="tab" data-bs-target="#unagi" type="button" role="tab" aria-controls="unagi" aria-selected="false">Unagi</button>
+                        <button class="nav-link" id="yakitori-tab-mobile" data-bs-toggle="tab" data-bs-target="#yakitori" type="button" role="tab" aria-controls="yakitori" aria-selected="false">Yakitori</button>
+                        <button class="nav-link" id="okonomiyaki-tab-mobile" data-bs-toggle="tab" data-bs-target="#okonomiyaki" type="button" role="tab" aria-controls="okonomiyaki" aria-selected="false">Okonomiyaki</button>
+                        <button class="nav-link" id="curry-tab-mobile" data-bs-toggle="tab" data-bs-target="#curry" type="button" role="tab" aria-controls="curry" aria-selected="false">Katsu Curry</button>
+                    </div>
+                </div>
+
+                <!-- Vertical Tabs for Large Screens -->
+                <div class="col-lg-3 d-none d-lg-block mb-4">
+                    <div class="nav flex-column nav-pills category-tabs" id="cuisine-tabs" role="tablist">
+                        <button class="nav-link active" id="sushi-tab" data-bs-toggle="tab" data-bs-target="#sushi" type="button" role="tab" aria-controls="sushi" aria-selected="true">Sushi</button>
+                        <button class="nav-link" id="ramen-tab" data-bs-toggle="tab" data-bs-target="#ramen" type="button" role="tab" aria-controls="ramen" aria-selected="false">Ramen</button>
+                        <button class="nav-link" id="unagi-tab" data-bs-toggle="tab" data-bs-target="#unagi" type="button" role="tab" aria-controls="unagi" aria-selected="false">Unagi</button>
+                        <button class="nav-link" id="yakitori-tab" data-bs-toggle="tab" data-bs-target="#yakitori" type="button" role="tab" aria-controls="yakitori" aria-selected="false">Yakitori</button>
+                        <button class="nav-link" id="okonomiyaki-tab" data-bs-toggle="tab" data-bs-target="#okonomiyaki" type="button" role="tab" aria-controls="okonomiyaki" aria-selected="false">Okonomiyaki</button>
+                        <button class="nav-link" id="curry-tab" data-bs-toggle="tab" data-bs-target="#curry" type="button" role="tab" aria-controls="curry" aria-selected="false">Katsu Curry</button>
+                    </div>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="col-lg-9">
+                    <div class="tab-content category-content" id="cuisine-tab-content">
+                        <div class="tab-pane fade show active" id="sushi" role="tabpanel" aria-labelledby="sushi-tab">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="images/sushi.jpg" alt="Sushi plate with various nigiri and rolls" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-7">
+                                    <h3 class="mb-3">Sushi</h3>
+                                    <p>Japan's most iconic dish featuring vinegared rice combined with fresh raw fish or seafood. Master chefs train for years to perfect the art of sushi-making, balancing flavors, textures, and presentation. Varieties include nigiri (hand-pressed), maki (rolled), and sashimi (sliced raw fish). Each piece is designed to be eaten in one bite to experience the perfect harmony of flavors.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ramen" role="tabpanel" aria-labelledby="ramen-tab">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="images/ramen.jpg" alt="Bowl of ramen with broth, noodles and toppings" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-7">
+                                    <h3 class="mb-3">Ramen</h3>
+                                    <p>A soul-warming noodle soup that has become a global sensation. Each region of Japan has its own distinctive style, from the rich, pork-based tonkotsu of Hakata to the miso ramen of Hokkaido. The perfect bowl features handmade wheat noodles in a deeply flavored broth, topped with chashu (braised pork), ajitama (marinated soft-boiled egg), menma (bamboo shoots), and green onions. The broth alone often cooks for 8-12 hours to develop its complex flavors.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="unagi" role="tabpanel" aria-labelledby="unagi-tab">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="images/unagi.jpg" alt="Grilled unagi eel on rice" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-7">
+                                    <h3 class="mb-3">Unagi</h3>
+                                    <p>A luxurious delicacy of freshwater eel grilled to perfection and glazed with a sweet-savory kabayaki sauce. Traditionally eaten in summer to provide stamina against the heat, unagi is rich in vitamins, calcium, and protein. The most popular preparation is unagi-don (unagi over rice) where the caramelized exterior gives way to tender, buttery flesh. The preparation requires special skill to fillet the eel properly, and restaurants often specialize exclusively in unagi dishes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="yakitori" role="tabpanel" aria-labelledby="yakitori-tab">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="images/yakitori.jpg" alt="Grilled yakitori chicken skewers" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-7">
+                                    <h3 class="mb-3">Yakitori</h3>
+                                    <p>Succulent skewers of chicken pieces grilled over binchotan (white charcoal) that imparts a distinctive smoky flavor without overpowering the meat. Yakitori chefs utilize every part of the chicken, from the tender thigh (momo) and crispy skin (kawa) to more adventurous parts like heart (hatsu) and cartilage (nankotsu). Each skewer is either seasoned with salt (shio) or brushed with a sweet-savory tare sauce. Yakitori is quintessential Japanese bar food, perfect with an ice-cold beer in a lively izakaya setting.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="okonomiyaki" role="tabpanel" aria-labelledby="okonomiyaki-tab">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="images/okonomiyaki.jpg" alt="Okonomiyaki pancake topped with sauce and bonito flakes" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-7">
+                                    <h3 class="mb-3">Okonomiyaki</h3>
+                                    <p>Often described as a "Japanese savory pancake," okonomiyaki literally means "grill what you like." The base is a batter of flour, grated nagaimo (mountain yam), dashi, eggs, and shredded cabbage, mixed with your choice of ingredients like pork belly, seafood, or cheese. After grilling, it's topped with okonomiyaki sauce (similar to Worcestershire), Japanese mayonnaise, aonori (seaweed flakes), katsuobushi (bonito flakes), and pickled ginger. The Osaka and Hiroshima styles offer distinctly different preparations, with the Hiroshima-style layering ingredients rather than mixing them.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="curry" role="tabpanel" aria-labelledby="curry-tab">
+                            <div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="images/katsu-curry.jpg" alt="Katsu curry with rice and breaded cutlet" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-7">
+                                    <h3 class="mb-3">Katsu Curry</h3>
+                                    <p>A perfect marriage of Western influence and Japanese sensibilities, combining a crispy panko-breaded cutlet (usually pork or chicken) with rich Japanese curry sauce over steamed rice. Unlike its Indian counterpart, Japanese curry is thick, slightly sweet, and milder in spice, developed during the Meiji era when British naval officers introduced curry to Japan. The cutlet remains perfectly crispy on top while the bottom absorbs the curry's flavors. This comfort food staple is found everywhere from home kitchens to dedicated curry houses and has become one of Japan's most beloved everyday meals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature Section -->
+<section id="nature" class="container py-5">
+    <h2 class="section-title text-center mb-5">Beautiful Japanese Flora</h2>
+  
+    <div id="floraCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#floraCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      </div>
+  
+      <!-- Slides -->
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active" data-bs-interval="6000">
+          <img src="images/japanese-maple.jpg" class="d-block w-100" alt="Japanese Maple">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Japanese Maple</h5>
+            <p>Vibrant foliage that transforms from spring greens to fiery autumn reds, creating breathtaking displays in Japanese gardens and temple grounds.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="images/japanese-sakura.jpg" class="d-block w-100" alt="Sakura">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Sakura (Cherry Blossom)</h5>
+            <p>Delicate blossoms creating clouds of white and pink in spring, symbolizing both the beauty and transience of life in Japanese culture.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="images/japanese-peony.jpg" class="d-block w-100" alt="Peony">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Japanese Peony</h5>
+            <p>Massive blooms with ruffled petals in vivid, dramatic colors representing nobility, honor, and wealth in traditional Japanese symbolism.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="images/japanese-iris.jpeg" class="d-block w-100" alt="Iris">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Japanese Iris</h5>
+            <p>Elegant flowers with bold color patterns and sword-like leaves, often depicted in traditional art and featured in specialized iris gardens throughout Japan.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="images/japanese-nandina.jpg" class="d-block w-100" alt="Nandina">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Nandina</h5>
+            <p>Color-changing foliage and bright red winter berries, known as "sacred bamboo" and traditionally planted near temple entrances for good fortune.</p>
+          </div>
+        </div>
+  
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="images/japanese-camellia.jpg" class="d-block w-100" alt="Camellia">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Japanese Camellia</h5>
+            <p>Winter-blooming flowers in white, pink, and red, prized for their perfect symmetry and ability to bloom during the coldest months when other gardens lie dormant.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#floraCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#floraCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+
+    <!-- Activities Section -->
+    <section id="activities" class="category-section py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">Top Japanese Activities</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-6">
+                                <img src="images/onsen.jpg" alt="Traditional Japanese outdoor hot spring bath" class="img-fluid h-100 w-100 object-fit-cover">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <div class="card-body">
+                                    <h5 class="card-title">Relax in an Onsen</h5>
+                                    <p class="card-text">Experience the therapeutic mineral-rich waters of Japan's hot springs, often set in beautiful natural surroundings. These ancient bathing traditions date back thousands of years and offer health benefits alongside cultural immersion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-6">
+                                <img src="images/cherry-blossom-view.jpg" alt="Cherry blossom viewing picnic" class="img-fluid h-100 w-100 object-fit-cover">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cherry Blossom Viewing</h5>
+                                    <p class="card-text">Join the centuries-old tradition of hanami during spring, where families and friends gather under blooming cherry trees to celebrate nature's beauty. This cultural practice combines outdoor picnicking with appreciation for seasonal change.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <a href="sub_page1.html">
+                            <div class="row g-0 h-100">
+                                <div class="col-md-6">
+                                    <img src="images/animal-cafe.jpg" alt="Shiba Inu at a Japanese animal cafe" class="img-fluid h-100 w-100 object-fit-cover">
+                                </div>
+                                <div class="col-md-6 d-flex flex-column">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Visit an Animal Café</h5>
+                                        <p class="card-text">Enjoy a unique experience at Japan's animal cafés, where you can sip drinks while interacting with cats, owls, hedgehogs, or Shiba Inus. These specialized cafés originated in Tokyo but have spread throughout Japan, offering animal therapy in urban settings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-6">
+                                <img src="images/japanese-castle.jpg" alt="Scenic view of Himeji Castle" class="img-fluid h-100 w-100 object-fit-cover">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <div class="card-body">
+                                    <h5 class="card-title">Explore a Japanese Castle</h5>
+                                    <p class="card-text">Step back into the age of samurai at Japan's magnificently preserved castles. These architectural masterpieces feature ingenious defensive designs, intricate woodwork, and offer panoramic views from their towering keeps, telling stories of feudal Japan's rich history.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-6">
+                                <img src="images/tea-ceremony.jpg" alt="Traditional Japanese tea ceremony" class="img-fluid h-100 w-100 object-fit-cover">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <div class="card-body">
+                                    <h5 class="card-title">Experience a Tea Ceremony</h5>
+                                    <p class="card-text">Participate in this centuries-old ritual that embodies harmony, respect, purity, and tranquility. Each precise movement in preparing matcha (powdered green tea) represents a philosophical aspect of Zen Buddhism, creating an immersive cultural meditation experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-6">
+                                <img src="images/japanese-shrine.jpg" alt="Japanese shrine with torii gate" class="img-fluid h-100 w-100 object-fit-cover">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <div class="card-body">
+                                    <h5 class="card-title">Explore Temples & Shrines</h5>
+                                    <p class="card-text">Discover Japan's spiritual heritage at its beautiful temples and shrines. These sacred spaces blend harmoniously with nature, ranging from grand complexes like Kyoto's Kiyomizu-dera to hidden forest sanctuaries, offering insights into both Shinto and Buddhist traditions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <!-- Gallery Section -->
+<section id="gallery" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Explore Japan's Beauty</h2>
+        <p class="lead text-center mb-4">Get inspired by Japan's most breathtaking destinations for your next adventure</p>
+        
+        <!-- Gallery Images -->
+        <div class="row g-4 mb-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/preview-1.jpg" alt="Tokyo Tower at night" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Tokyo Tower</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Experience Tokyo's iconic tower illuminated against the night skyline - a must-see landmark for visitors</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/preview-2.jpg" alt="Traditional Kyoto street" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Kyoto Streets</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Wander through Kyoto's historic Gion district where traditional architecture and culture still thrive</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/osaka-castle.jpeg" alt="Osaka Castle" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Osaka Castle</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Visit the magnificent Osaka Castle, a stunning example of Japanese castle architecture and history</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/bambo-grove.jpeg" alt="Bamboo Grove" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Bamboo Grove</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Walk through the enchanting bamboo forest in Arashiyama, one of Kyoto's most photographed natural attractions</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/kyoto-temple.jpg" alt="Kyoto Temple" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Kyoto Temple</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Discover tranquility at Kyoto's ancient temples where spirituality meets stunning architecture</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/tokyo-skyline.jpg" alt="Tokyo Skyline" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Tokyo Skyline</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Marvel at Tokyo's futuristic skyline, where tradition meets innovation in Japan's vibrant capital</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/mount-fuji.jpg" alt="Mount Fuji" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Mount Fuji</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Witness the majestic Mount Fuji, Japan's highest peak and one of its most recognizable natural symbols</p>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-preview">
+                    <img src="images/preview-8.jpg" alt="Shibuya Crossing" class="img-fluid rounded">
+                    <div class="preview-overlay">
+                        <span>Shibuya Crossing</span>
+                    </div>
+                </div>
+                <p class="small mt-2">Experience the famous Shibuya Crossing in Tokyo, one of the busiest pedestrian intersections in the world</p>
+            </div>
+        </div>
+        
+        <!-- Travel Planner Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="travel-planner-container p-4 rounded bg-light">
+                    <h3 class="text-center">Plan Your Japanese Adventure</h3>
+                    <p class="lead text-center">Ready to experience these destinations? Subscribe for our exclusive travel guides and seasonal recommendations!</p>
+                    
+        
+        <!-- Popular Destinations -->
+        <div class="row mt-5">
+            <div class="col-12 text-center mb-4">
+                <h3>Popular Tourist Destinations</h3>
+                <p>Our most-recommended places to visit during your trip to Japan</p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="category-card text-center p-3 rounded">
+                    <div class="destination-icon mb-3">🏙️</div>
+                    <h5>Tokyo & Surroundings</h5>
+                    <p>Modern attractions, shopping districts, and day trips to nearby Kamakura and Nikko</p>
+                    <a href="#" class="btn btn-sm btn-outline-danger mt-2">Explore Tokyo Guide</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="category-card text-center p-3 rounded">
+                    <div class="destination-icon mb-3">⛩️</div>
+                    <h5>Kyoto & Cultural Triangle</h5>
+                    <p>Traditional Japan with temples, shrines, and cultural experiences in Kyoto, Nara and Osaka</p>
+                    <a href="#" class="btn btn-sm btn-outline-danger mt-2">Explore Kyoto Guide</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="category-card text-center p-3 rounded">
+                    <div class="destination-icon mb-3">🗻</div>
+                    <h5>Nature & Adventure</h5>
+                    <p>Breathtaking landscapes from Mount Fuji to the Japanese Alps and tropical Okinawa</p>
+                    <a href="#" class="btn btn-sm btn-outline-danger mt-2">Explore Nature Guide</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <a href="#home" class="btn btn-outline-primary">Return to Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Discover Japan</h5>
+                    <p>Experience the perfect harmony of ancient traditions and modern innovations.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>© 2025 Japan Tourism. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-XrPpZKi4zH+ZQDb5iJX44D4k9Z+oB4FyoF8RLr4ZgSh4Ckxnp8L2PjR0gxTIcQdX" crossorigin="anonymous"></script>
+    </body>
+    </html>

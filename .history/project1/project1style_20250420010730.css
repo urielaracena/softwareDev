@@ -133,6 +133,73 @@ section {
     transform: translateX(-50%);
 }
 
+/* Nature section */
+.nature-section {
+    background-color: #f8f9fa;
+}
+
+.scrollspy {
+    position: relative;
+    height: 450px;
+    overflow: auto;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.uniform-thumb {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    text-align: center;
+    color: var(--secondary);
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.scrollspy p {
+    text-indent: 10%;
+    line-height: 1.6;
+}
+
+.scrollspy::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollspy::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.scrollspy::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.list-group-item.active {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+}
+
+.list-group-item:focus {
+    outline: none;
+}
+
+.list-group-item {
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover:not(.active) {
+    background-color: rgba(229, 62, 62, 0.1);
+}
+
 /* Category section */
 .category-section {
     background-color: #f8f9fa;
@@ -194,6 +261,48 @@ section {
     border-color: var(--primary);
 }
 
+/* Carousel Fix */
+#floraCarousel {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#floraCarousel .carousel-item {
+    height: 500px;
+}
+
+#floraCarousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#floraCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#floraCarousel .carousel-indicators {
+    margin-bottom: 0.5rem;
+}
+
+#floraCarousel .carousel-control-prev,
+#floraCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+}
+
+#floraCarousel .carousel-control-prev:hover,
+#floraCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
 /* Activities section */
 .activities-section {
     background-color: white;
@@ -251,6 +360,61 @@ footer h5 {
     margin-bottom: 1rem;
 }
 
+/* Media queries */
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    #floraCarousel .carousel-item {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    #floraCarousel .carousel-item {
+        height: 350px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 2.3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    #floraCarousel .carousel-item {
+        height: 300px;
+    }
+}
 
 .gallery-preview {
     position: relative;
@@ -356,7 +520,19 @@ footer h5 {
 
 .category-card i {
     color: #1d3557;
-} 
+}
+
+/* Form styling */
+.form-control {
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+    border-color: #e63946;
+}
 
 /* Animation for scrolling */
 .visible {
