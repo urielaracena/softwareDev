@@ -703,20 +703,9 @@ section {
         text-align: center;
     }
 
-    #intro .img-thumbnail {
-        display: none
-    }
-
     .destinations .title {
         display: none
     }
-
-    .body{
-        margin-left: 2rem !important;
-    }
-
-    .hero {
-        height: 70vh;
 
 }
 
