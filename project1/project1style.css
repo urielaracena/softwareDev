@@ -459,12 +459,17 @@ section {
         font-size: 0.9rem !important;
     }
 
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
     .btn {
         font-size: 1rem;
         padding: 8px 16px;
     }
     .hero {
         height: 70vh;
+        background-attachment: scroll;
         background-position: center top;
         background-size: cover;
     }
