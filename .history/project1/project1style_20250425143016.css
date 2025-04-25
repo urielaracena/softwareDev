@@ -21,11 +21,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar-nav {
-    padding-top: 1rem;
-    text-align: right;
-}
-
 .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
@@ -571,6 +566,10 @@ section {
         display: none
     }
 
+    .navbar-nav {
+        padding-top: 1rem;
+        text-align: right;
+    }
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css");

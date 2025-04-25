@@ -21,11 +21,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.navbar-nav {
-    padding-top: 1rem;
-    text-align: right;
-}
-
 .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
@@ -109,6 +104,7 @@ body {
     color: var(--light) 0.3s ease;
 }
 
+/* Class to apply red color when button is hovered */
 .hero .highlight-word--active {
     color: var(--primary) !important;
 }
@@ -147,6 +143,61 @@ section.hero {
 .category-section {
     background-color: #f8f9fa;
     padding: 5rem 0;
+}
+
+.category-tab {
+    border: none;
+    background-color: transparent;
+    color: var(--dark);
+    font-weight: 600;
+    padding: 15px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+.category-tab.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.3);
+}
+
+.category-tab:hover:not(.active) {
+    background-color: rgba(229, 62, 62, 0.1);
+    color: var(--primary);
+}
+
+.category-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Cuisine tabs mobile */
+.cuisine-tabs-mobile {
+    padding-bottom: 10px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.cuisine-tabs-mobile .nav-link {
+    border-radius: 30px;
+    padding: 8px 16px;
+    white-space: nowrap;
+    background-color: white;
+    color: var(--dark) !important;
+    border: 1px solid #e2e8f0;
+    margin-right: 8px;
+}
+
+.cuisine-tabs-mobile .nav-link.active {
+    background-color: var(--primary);
+    color: white !important;
+    border-color: var(--primary);
 }
 
 /* Activities section */
@@ -205,8 +256,8 @@ footer h5 {
     margin-bottom: 1rem;
 }
 
-/* Locations previews */
-.locations-preview {
+/* Gallery/Locations previews */
+.gallery-preview, .locations-preview {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
@@ -216,7 +267,7 @@ footer h5 {
     transition: all 0.3s ease;
 }
 
-.locations-preview img {
+.gallery-preview img, .locations-preview img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -247,16 +298,52 @@ footer h5 {
     border-radius: 20px;
 }
 
-.locations-preview:hover {
+.gallery-preview:hover, .locations-preview:hover {
     transform: translateY(-5px);
 }
 
-.locations-preview:hover img {
+.gallery-preview:hover img, .locations-preview:hover img {
     transform: scale(1.1);
 }
 
-.locations-preview:hover .preview-overlay {
+.gallery-preview:hover .preview-overlay, .locations-preview:hover .preview-overlay {
     opacity: 1;
+}
+
+.coming-soon-container {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* Countdown styling */
+#countdown {
+    margin: 30px 0;
+}
+
+.countdown-item {
+    background-color: #1d3557;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: 5px;
 }
 
 /* Category cards */
@@ -275,6 +362,30 @@ footer h5 {
 .category-card i {
     color: #1d3557;
 } 
+
+.img-thumbnail {
+    width: 100px;
+    height: auto;
+    border: none;
+    margin-bottom: 1.4rem;
+    margin-left: -1.0rem;
+}
+
+/* Animation for scrolling */
+.visible {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Font awesome icons compatibility */
 .bi {
@@ -304,6 +415,15 @@ footer h5 {
 .destination-icon {
     font-size: 2.5rem;
     color: var(--primary);
+}
+
+/* Fix for navigation scroll offset */
+:target::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
 }
 
 /* Unified carousel styling */
@@ -443,7 +563,15 @@ section {
     padding-bottom: 40px;
 }
 
-#activities .card-title {
+.img-thumbnail {
+    size: 100px;
+    margin-left: 21.6rem;
+    margin-top: -3.3995rem;
+    position: absolute;
+    z-index: -1;
+}
+
+#activities .card-title{
     text-align: center;
 }
 
@@ -505,10 +633,12 @@ section {
         display: none;
     }
     
+    /* Optional: Adjust padding/spacing since text is now hidden */
     .card .card-body .p {
         padding: 1rem 0.8rem;
     }
     
+    /* Optional: Make titles more prominent if needed */
     .card .card-title {
         margin-bottom: 0;
         font-size: 1.1rem;
@@ -523,6 +653,7 @@ section {
         display: none;
     }
     
+    /* Reposition the overlay to be below the image instead of on top */
     .preview-overlay {
         position: relative;
         opacity: 1;
@@ -531,6 +662,7 @@ section {
         margin-top: 5px;
     }
     
+    /* Style the text in the repositioned overlay */
     .preview-overlay span {
         color: var(--primary);
         background-color: transparent;
@@ -539,18 +671,22 @@ section {
         font-size: 0.9rem;
     }
     
+    /* Adjust image height for mobile */
     .locations-preview img {
         height: 120px;
     }
     
+    /* Make containers more compact */
     .locations-preview {
         margin-bottom: 0;
     }
     
+    /* Adjust spacing */
     .row.g-4 {
         row-gap: 1rem !important;
     }
     
+    /* Reduce category card content */
     .category-card p.text-dark {
         display: none;
     }
@@ -571,6 +707,10 @@ section {
         display: none
     }
 
+    .navbar-nav {
+        padding-top: 1rem;
+        text-align: right;
+    }
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css");

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Discover Japan - Cuisine</title>
+  <title>Discover Japan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="project1style.css">
 </head>
@@ -19,7 +19,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#home">Home</a>
@@ -51,13 +51,19 @@
     </section>
 
     <!-- Introduction Section -->
-    <section class="py-5">
+    <section class="py-5" id="intro">
         <div class="container">
-            <img src="images/welcome-cat.jpg" alt="Cat image" class="img-thumbnail">
-            <h2 class="section-title">Welcome to Japan</h2>
+            <div class="row justify-content-center align-items-center text-center text-md-start mb-4">
+                
+                <div class="col-auto">
+                    <h2 class="section-title mb-0">Welcome to Japan</h2>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <p class="lead mb-4">Japan offers a captivating blend of ancient traditions and cutting-edge modernity. From tranquil temples and cherry blossoms to bustling cities and technological marvels, immerse yourself in a culture unlike any other.</p>
+                    <p class="lead mb-4 text-center">
+                        Whether you're drawn to peaceful Zen gardens or high-tech cityscapes, Japan welcomes you with unforgettable experiences. Explore a culture where the sacred and the futuristic exist side by side
+                    </p>
                 </div>
             </div>
         </div>
@@ -67,7 +73,7 @@
     <section id="cuisine" class="food-carousel-section">
         <div class="container">
             <h2 class="section-title text-center mb-4">Cuisine</h2>
-            <p class="lead mb-4">Savor the diverse and delicious flavors of Japanese culinary arts.</p>
+            <p class="lead mb-4 text-center text-center">Savor the diverse and delicious flavors of Japanese culinary arts</p>
             <div class="carousel-container">
                 <div id="japanFoodCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -82,15 +88,15 @@
                         <div class="carousel-item active">
                             <img src="images/sushi.jpg" class="d-block w-100" alt="Various types of sushi on a platter">
                             <div class="carousel-caption">
-                                <h3>Sushi & Sashimi</h3>
-                                <p>Fresh seafood expertly prepared in Japan's most iconic culinary tradition</p>
+                                <h3>Sushi</h3>
+                                <p>Ocean-fresh fish prepared with traditional techniques. Simple ingredients that deliver pure flavor</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/unagi.jpg" class="d-block w-100" alt="Grilled unagi (eel) dish">
                             <div class="carousel-caption">
                                 <h3>Unagi</h3>
-                                <p>Delicious grilled freshwater eel glazed with sweet soy-based sauce</p>
+                                <p>Smoky grilled eel brushed with savory-sweet sauce. A Japanese delicacy with rich, distinct taste</p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -104,7 +110,7 @@
                             <img src="images/ramen.jpg" class="d-block w-100" alt="Bowl of steaming ramen noodles">
                             <div class="carousel-caption">
                                 <h3>Ramen</h3>
-                                <p>Savor rich, flavorful broths and handmade noodles at local ramen shops</p>
+                                <p>Flavorful broth, springy noodles, and carefully prepared toppings. Soul-warming in every bowl.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -139,9 +145,9 @@
     <section id="activities" class="activities-section py-5">
         <div class="container">
             <h2 class="section-title mb-5">Activities</h2>
-            <p class="lead mb-4">Immerse yourself in unique cultural and recreational experiences.</p>
-            <div class="row g-4">
-                <div class="col-lg-6">
+            <p class="lead mb-4 text-center">Immerse yourself in unique cultural and recreational experiences</p>
+            <div class="g-4 row">
+                <div class="col-6">
                     <a href="https://www.japan-guide.com/e/e2292.html" class="text-decoration-none">
                         <div class="card h-100">
                             <div class="row g-0 h-100">
@@ -158,7 +164,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-6">
                     <a href="https://www.japan-guide.com/e/e2011_when.html" class="text-decoration-none">
                         <div class="card h-100">
                             <div class="row g-0 h-100">
@@ -175,7 +181,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-6">
                     <a href="https://www.japan-guide.com/e/e2314.html" class="text-decoration-none">
                         <div class="card h-100">
                             <div class="row g-0 h-100">
@@ -192,7 +198,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-6">
                     <a href="https://www.japan-guide.com/e/e2296.html" class="text-decoration-none">
                         <div class="card h-100">
                             <div class="row g-0 h-100">
@@ -209,12 +215,12 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-6">
                     <a href="https://www.japan-guide.com/e/e2096.html" class="text-decoration-none">
                         <div class="card h-100">
                             <div class="row g-0 h-100">
                                 <div class="col-md-6">
-                                    <img src="images/tea-ceremony.jpg" alt="Traditional Japanese tea ceremony" class="img-fluid h-100 w-100 object-fit-cover">
+                                    <img src="images/tea-ceremony.jpg" alt="Traditional Japanese tea ceremony" class="img-fluid h-100 w-100">
                                 </div>
                                 <div class="col-md-6 d-flex flex-column">
                                     <div class="card-body">
@@ -226,7 +232,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-6">
                     <a href="https://www.japan-guide.com/e/e2059.html" class="text-decoration-none">
                         <div class="card h-100">
                             <div class="row g-0 h-100">
@@ -251,7 +257,7 @@
     <section id="nature" class="plants-carousel-section">
         <div class="container">
             <h2 class="section-title text-center mb-4">Nature</h2>
-            <p class="lead mb-4">Explore the breathtaking flora and natural beauty of Japan.</p>
+            <p class="lead mb-4 text-center">Explore the breathtaking flora and natural beauty of Japan</p>
             <div class="carousel-container">
                 <div id="japanPlantsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -267,42 +273,42 @@
                             <img src="images/japanese-camellia.jpg" class="d-block w-100" alt="Japanese camellia flowers">
                             <div class="carousel-caption">
                                 <h3>Japanese Camellia</h3>
-                                <p>Elegant flowering plants that bloom during winter, symbolizing longevity</p>
+                                <p>Graceful winter bloomers known for their silky petals, symbolizing admiration and eternal youth</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/japanese-maple.jpg" class="d-block w-100" alt="Japanese maple with red autumn leaves">
                             <div class="carousel-caption">
                                 <h3>Japanese Maple</h3>
-                                <p>Momiji trees create stunning autumn landscapes with their vibrant red foliage</p>
+                                <p>With leaves that blaze crimson in fall, the momiji tree paints serene landscapes and represents the beauty of impermanence</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/japanese-sakura.jpg" class="d-block w-100" alt="Cherry blossoms in full bloom">
                             <div class="carousel-caption">
                                 <h3>Cherry Blossoms</h3>
-                                <p>Sakura symbolize the ephemeral nature of life and mark the arrival of spring</p>
+                                <p>Delicate sakura blossoms herald the arrival of spring, embodying life’s fleeting beauty and the spirit of renewal</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/japanese-nandina.jpg" class="d-block w-100" alt="Japanese nandina plant with berries">
                             <div class="carousel-caption">
                                 <h3>Japanese Nandina</h3>
-                                <p>Also known as "heavenly bamboo," features distinctive red berries in winter</p>
+                                <p>Often called “heavenly bamboo,” this evergreen shrub brightens winter with fiery red berries and lacy foliage</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/japanese-iris.jpeg" class="d-block w-100" alt="Japanese iris flowers">
                             <div class="carousel-caption">
                                 <h3>Japanese Iris</h3>
-                                <p>Beautiful water-loving flowers celebrated in traditional Japanese art</p>
+                                <p>Elegant, water-loving flowers admired in art and poetry, symbolizing purity and strength in the face of adversity</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/japanese-peony.jpg" class="d-block w-100" alt="Japanese peony flowers">
                             <div class="carousel-caption">
                                 <h3>Japanese Peony</h3>
-                                <p>Luxurious blooms that symbolize prosperity and honor in Japanese culture</p>
+                                <p>Known for its lush, full blooms, the Japanese peony symbolizes elegance, respect, and good fortune</p>
                             </div>
                         </div>
                     </div>
@@ -323,11 +329,11 @@
     <section id="locations" class="py-5">
         <div class="container">
             <h2 class="section-title">Locations</h2>
-            <p class="lead mb-4">Discover iconic destinations that showcase Japan's rich heritage and natural wonders.</p>
+            <p class="lead mb-4 text-center">Discover iconic destinations that showcase Japan's rich heritage and natural wonders</p>
             <div class="row g-4 mb-4">
                 <div class="col-6 col-md-4 col-lg-4">
                     <a href="https://www.japan-guide.com/e/e4103.html" class="text-decoration-none">
-                        <div class="locations-preview">
+                        <div class="locations-preview" data-title="Nara Deer Park">
                             <img src="images/nara-deer-park.jpg" alt="Nara Deer Park" class="img-fluid rounded">
                             <div class="preview-overlay">
                                 <span>Nara Deer Park</span>
@@ -338,7 +344,7 @@
                 </div>
                 <div class="col-6 col-md-4 col-lg-4">
                     <a href="https://www.japan-guide.com/e/e4000.html" class="text-decoration-none">
-                        <div class="locations-preview">
+                        <div class=" locations-preview" >
                             <img src="images/japanese-castle.jpg" alt="Osaka Castle" class="img-fluid rounded">
                             <div class="preview-overlay">
                                 <span>Osaka Castle</span>
@@ -397,42 +403,42 @@
                     <h3 class="destination-title">Popular Tourist Destinations</h3>
                     <p>Our most-recommended places to visit during your trip to Japan</p>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="container-sm destinations">
+                    <div class="row">
+                <div class="col-4 sm-4 mb-4">
                     <a href="tokyo_and_surrounding.html" class="text-decoration-none">
                         <div class="category-card text-center p-3 rounded">
                             <div class="destination-icon mb-3">🏙️</div>
-                            <h5>Tokyo & Surroundings</h5>
-                            <p class="text-dark">Modern attractions, shopping districts, and day trips to nearby Kamakura and Nikko</p>
+                            <h5 class="title">Tokyo & Surroundings</h5>
                             <span class="btn btn-sm btn-outline-danger mt-2">Explore Tokyo Guide</span>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-4 sm-4 mb-4">
                     <a href="kyoto.html" class="text-decoration-none">
                         <div class="category-card text-center p-3 rounded">
                             <div class="destination-icon mb-3">⛩️</div>
-                            <h5>Kyoto & Cultural Triangle</h5>
-                            <p class="text-dark">Traditional Japan with temples, shrines, and cultural experiences in Kyoto, Nara and Osaka</p>
+                            <h5 class="title">Kyoto & Cultural Triangle</h5>
                             <span class="btn btn-sm btn-outline-danger mt-2">Explore Kyoto Guide</span>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-4 sm-4 mb-4">
                     <a href="hokkaido.html" class="text-decoration-none">
                         <div class="category-card text-center p-3 rounded">
                             <div class="destination-icon mb-3">🗻</div>
-                            <h5>Hokkaido & North Japan</h5>
-                            <p class="text-dark">Discover Japan's northern wilderness with pristine lakes, mountains, and hot springs</p>
+                            <h5 class="title">Hokkaido & North Japan</h5>
                             <span class="btn btn-sm btn-outline-danger mt-2">Explore Hokkaido Guide</span>
                         </div>
                     </a>
                 </div>
             </div>
+                </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4" id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
