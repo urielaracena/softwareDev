@@ -1,4 +1,7 @@
-""" Uriel Aracena April 25, Loops """
+"""
+Uriel Aracena
+April 25, Loops
+"""
 
 print('\n ------ Example 1: for loop as a counter  ------')
 # print hello from 0 to 4

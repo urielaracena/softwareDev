@@ -1,7 +1,6 @@
 '''
 Uriel Aracena
 April 27, Python applications
-Modified to work without requiring user input
 '''
 from lab11_functions import *
 import math
@@ -155,7 +154,7 @@ print(car1.read_odometer())
 
 """
 Uriel Aracena
-Lab 11 Exerci, class in Python (extra points)
+Lab 11 Exercise, Class' in Python (extra points)
 """
 
 class Student:
