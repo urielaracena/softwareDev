@@ -19,10 +19,18 @@
         </ul>
 
         {% if checkfruit in listfruits %}
-            <p>Greate! We have {{checkedfruit}} today</p>
+            <p>Great! We have {{checkedfruit}} today</p>
         {% else %}
-                <p>Kiwi is not in the list</p>
+                <p>{{checkfruit}} is not in the list</p>
         {% endif %}
     </section>
+
+    <h2>HTTP REQUEST</h2>
+    <form method="POST">
+        <input type="password" name="password"/>
+        <input type="submit"/>
+    </form>
+
+    <h2><a href="{{url_for('users')}}">Add new employee</a></h2>
 </body>
 </html>
