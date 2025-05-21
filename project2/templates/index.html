@@ -13,7 +13,7 @@
   <div class="hero-content">
     <h1 class="animate-fade-in-up">Welcome to Dianna’s Salon</h1>
     <p class="animate-fade-in-up" style="animation-delay: 0.2s;">Experience exceptional beauty services in a relaxing atmosphere.</p>
-    <a href="{{ url_for('services_by_category', category='hair') }}" class="btn-hero animate-fade-in-up" style="animation-delay: 0.4s;">Explore Our Services</a>
+    <a href="{{ url_for('all_services') }}" class="btn-hero animate-fade-in-up" style="animation-delay: 0.4s;">Explore Our Services</a>
   </div>
 </section>
 
@@ -120,7 +120,7 @@
   <div class="container">
     <h2 class="animate-fade-in-up">Ready to Book Your Appointment?</h2>
     <p class="mb-4 animate-fade-in-up" style="animation-delay: 0.2s;">Browse our services and add them to your cart to book your appointment today.</p>
-    <a href="{{ url_for('services_by_category', category='hair') }}" class="btn btn-primary btn-lg animate-fade-in-up" style="animation-delay: 0.4s;">Explore Services</a>
+    <a href="{{ url_for('all_services') }}" class="btn btn-primary btn-lg animate-fade-in-up" style="animation-delay: 0.4s;">Explore Services</a>
   </div>
 </section>
 {% endblock %}
