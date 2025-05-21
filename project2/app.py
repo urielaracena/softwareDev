@@ -310,7 +310,7 @@ def add_to_cart():
     # Check if service is already in cart
     cart_item_ids = [item['id'] for item in session['cart']]
     if service_id in cart_item_ids:
-        flash(f'{service.name} is already in your cart', 'warning')
+        flash(f'{service.name} is already selected', 'warning')
         return redirect(request.referrer or url_for('all_services'))
     
     # Add item to cart
@@ -323,7 +323,7 @@ def add_to_cart():
     session['cart'].append(cart_item)
     session.modified = True
     
-    flash(f'{service.name} added to your cart', 'success')
+    flash(f'{service.name} added to your appointment', 'success')
     return redirect(request.referrer or url_for('all_services'))
 
 @app.route('/remove-from-cart', methods=['POST'])
@@ -364,7 +364,7 @@ def checkout():
         notes = request.form.get('notes')
 
         if not selected_date or not selected_time:
-            flash('Please select both date and time for your booking.', 'danger')
+            flash('Please select both date and time for your appointment.', 'danger')
             return redirect(url_for('checkout'))
 
         try:
