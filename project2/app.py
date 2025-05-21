@@ -1,18 +1,24 @@
+import os
 from flask import Flask, render_template, redirect, url_for, request, session, flash, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, date, time, timedelta
-import os, json
+import json
 
 # Create Flask app
 app = Flask(__name__)
 
 # App configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:aracena@localhost/salon_db'
+database_url = os.environ.get('DATABASE_URL')
+# Handle Render's postgres:// vs postgresql:// issue
+if database_url and database_url.startswith('postgres://'):
+    database_url = database_url.replace('postgres://', 'postgresql://', 1)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url or 'postgresql://postgres:aracena@localhost/salon_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', os.urandom(24))
 
 # Initialize database
 db = SQLAlchemy(app)
@@ -424,7 +430,27 @@ def cancel_booking(booking_id):
     flash('Your appointment has been canceled.', 'info')
     return redirect(url_for('dashboard'))
 
-
+# Admin dashboard route
+@app.route('/admin', methods=['GET'])
+@login_required
+def admin_dashboard():
+    # TODO: Add actual admin check
+    # This is a placeholder for demonstration
+    if current_user.username != 'admin':
+        flash('You do not have permission to access the admin dashboard.', 'danger')
+        return redirect(url_for('dashboard'))
+    
+    # Get all bookings for admin view
+    all_bookings = Booking.query.order_by(Booking.date, Booking.time).all()
+    all_users = User.query.all()
+    all_services = Service.query.all()
+    
+    return render_template(
+        'admin_dashboard.html', 
+        bookings=all_bookings,
+        users=all_users,
+        services=all_services
+    )
 
 # Error handlers
 @app.errorhandler(404)
@@ -435,11 +461,14 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
+# Port configuration for Render
+port = int(os.environ.get('PORT', 5000))
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
 
-         # Check if services already exist to avoid duplicates
+        # Check if services already exist to avoid duplicates
         if Service.query.count() == 0:
             # Add services to the database
             services = [
@@ -474,4 +503,8 @@ if __name__ == '__main__':
             
             print(f"Added {len(services)} services to the database")
             
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
+else:
+    # This runs when imported by gunicorn
+    with app.app_context():
+        db.create_all()
