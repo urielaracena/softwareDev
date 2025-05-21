@@ -63,8 +63,8 @@ def users():
             existing_id = Employee.query.filter_by(employee_id = emp_id).first() # boolean (true,false)
 
             if existing_employee:
-                flash(f'Employee with name '{emp_name}'already exists!')
-                flash(f'Employee with id '{emp_id}'already exists!')
+                flash(f"Employee with name '{emp_name}' already exists!")
+                flash(f"Employee with id '{emp_id}' already exists!")
 
             # create a new employee object and add form data into the database
             new_employee =  Employee(employee_id = emp_id, employee_name = emp_name)
