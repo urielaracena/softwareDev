@@ -61,7 +61,7 @@
         </a>
 
         {% if session.get('cart', [])|length > 0 %}
-        <a href="{{ url_for('checkout') }}" class="btn btn-primary">
+        <a href="{{ url_for('checkout') }}" class="btn btn-hero">
             <i class="fas fa-book me-2"></i> View Appointment 
             <span class="badge bg-light text-dark ms-1">{{ session.get('cart', [])|length }}</span>
         </a>
