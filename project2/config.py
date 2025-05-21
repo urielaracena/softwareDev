@@ -7,5 +7,5 @@ class Config:
     # Use environment variable for production, fallback to localhost for development
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'DATABASE_URL', 
-        'postgresql://postgres:aracena@localhost/salon_db'
+        'postgresql://postgres:aracena@localhost:5432/salon_db'
     )
