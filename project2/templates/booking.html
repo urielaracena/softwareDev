@@ -1,0 +1,174 @@
+<!-- templates/booking.html -->
+{% extends "base.html" %}
+
+{% block title %}Book an Appointment - Elegant Salon{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="card-title mb-0">Book an Appointment</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('book_service') }}">
+                            <!-- Service Selection -->
+                            <div class="mb-3">
+                                <label for="service_id" class="form-label">Select Service</label>
+                                <select class="form-select" id="service_id" name="service_id" required>
+                                    <option value="" selected disabled>-- Select a Service --</option>
+                                    {% for service in services %}
+                                    <option value="{{ service.id }}" data-price="{{ service.price }}" data-duration="{{ service.duration }}">
+                                        {{ service.name }} - ${{ service.price }} ({{ service.duration }} mins)
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.errors.service_id %}
+                                <div class="text-danger mt-1">{{ form.errors.service_id }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Date Selection -->
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Select Date</label>
+                                <input type="date" class="form-control" id="date" name="date" required min="{{ now_date }}">
+                                {% if form.errors.date %}
+                                <div class="text-danger mt-1">{{ form.errors.date }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Time Selection -->
+                            <div class="mb-3">
+                                <label for="time" class="form-label">Select Time</label>
+                                <input type="time" class="form-control" id="time" name="time" required>
+                                {% if form.errors.time %}
+                                <div class="text-danger mt-1">{{ form.errors.time }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Booking Summary -->
+                            <div class="card mb-3 d-none" id="booking-summary">
+                                <div class="card-body">
+                                    <h5 class="card-title">Booking Summary</h5>
+                                    <div class="row">
+                                        <div class="col-4">Service:</div>
+                                        <div class="col-8" id="summary-service">-</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Price:</div>
+                                        <div class="col-8" id="summary-price">-</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Duration:</div>
+                                        <div class="col-8" id="summary-duration">-</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Date:</div>
+                                        <div class="col-8" id="summary-date">-</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Time:</div>
+                                        <div class="col-8" id="summary-time">-</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Book Appointment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize date picker
+        flatpickr("#date", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            disable: [
+                function(date) {
+                    // Disable Sundays if salon is closed
+                    return date.getDay() === 0;
+                }
+            ]
+        });
+
+        // Initialize time picker
+        flatpickr("#time", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            minTime: "09:00",
+            maxTime: "19:00",
+            minuteIncrement: 30
+        });
+
+        // Dynamic booking summary
+        const serviceSelect = document.getElementById('service_id');
+        const dateInput = document.getElementById('date');
+        const timeInput = document.getElementById('time');
+        const bookingSummary = document.getElementById('booking-summary');
+        
+        const summaryService = document.getElementById('summary-service');
+        const summaryPrice = document.getElementById('summary-price');
+        const summaryDuration = document.getElementById('summary-duration');
+        const summaryDate = document.getElementById('summary-date');
+        const summaryTime = document.getElementById('summary-time');
+        
+        function updateSummary() {
+            const serviceSelected = serviceSelect.selectedIndex > 0;
+            const dateSelected = dateInput.value !== '';
+            const timeSelected = timeInput.value !== '';
+            
+            if(serviceSelected && dateSelected && timeSelected) {
+                const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+                const serviceName = selectedOption.text.split(' - ')[0];
+                const price = selectedOption.dataset.price;
+                const duration = selectedOption.dataset.duration;
+                
+                summaryService.textContent = serviceName;
+                summaryPrice.textContent = `$${price}`;
+                summaryDuration.textContent = `${duration} minutes`;
+                
+                // Format date for display
+                const dateObj = new Date(dateInput.value);
+                const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                summaryDate.textContent = formattedDate;
+                
+                // Format time for display
+                const timeArr = timeInput.value.split(':');
+                let hours = parseInt(timeArr[0]);
+                const minutes = timeArr[1];
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                const formattedTime = `${hours}:${minutes} ${ampm}`;
+                summaryTime.textContent = formattedTime;
+                
+                bookingSummary.classList.remove('d-none');
+            }
+        }
+        
+        serviceSelect.addEventListener('change', updateSummary);
+        dateInput.addEventListener('change', updateSummary);
+        timeInput.addEventListener('input', updateSummary);
+    });
+</script>
+{% endblock %}

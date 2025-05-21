@@ -1,0 +1,126 @@
+<!-- templates/dashboard.html -->
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Elegant Salon{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mb-4 display-5 text-center">Welcome, {{ current_user.first_name or current_user.username }}!</h1>
+        
+        <div class="row">
+            <!-- User Profile Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Your Profile</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Username:</strong> {{ current_user.username }}</p>
+                        <p><strong>Email:</strong> {{ current_user.email }}</p>
+                        {% if current_user.first_name and current_user.last_name %}
+                        <p><strong>Name:</strong> {{ current_user.first_name }} {{ current_user.last_name }}</p>
+                        {% endif %}
+                        {% if current_user.phone %}
+                        <p><strong>Phone:</strong> {{ current_user.phone }}</p>
+                        {% endif %}
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary">Edit Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="col-md-8 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Quick Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-grid">
+                                    <a href="{{ url_for('all_services') }}" class="btn btn-outline-secondary">
+                                        <i class="fas fa-list"></i> View Services
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-grid">
+                                    <a href="{{ url_for('about') }}" class="btn btn-outline-secondary">
+                                        <i class="fas fa-envelope"></i> Contact Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Upcoming Appointments -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">Your Upcoming Appointments</h5>
+            </div>
+            <div class="card-body">
+                {% if bookings %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for booking in bookings %}
+                                <tr>
+                                    <td>{{ booking.service.name }}</td>
+                                    <td>{{ booking.date.strftime('%B %d, %Y') }}</td>
+                                    <td>{{ booking.time.strftime('%I:%M %p') }}</td>
+                                    <td>
+                                        {% if booking.status == 'pending' %}
+                                        <span class="badge bg-warning text-dark">Pending</span>
+                                        {% elif booking.status == 'confirmed' %}
+                                        <span class="badge bg-success">Confirmed</span>
+                                        {% elif booking.status == 'completed' %}
+                                        <span class="badge bg-info">Completed</span>
+                                        {% elif booking.status == 'canceled' %}
+                                        <span class="badge bg-danger">Canceled</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if booking.status != 'canceled' and booking.status != 'completed' %}
+                                        <a href="{{ url_for('cancel_booking', booking_id=booking.id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to cancel this appointment?')">Cancel</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="alert alert-info">
+                        You don't have any upcoming appointments. <a href="{{ url_for('book_service') }}">Book one now!</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Past Appointments -->
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="card-title mb-0">Past Appointments</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    Your appointment history will appear here after your first appointment.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

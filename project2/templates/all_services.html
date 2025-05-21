@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}All Service Categories - Diana's Salon{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4 display-5 text-center">Explore Our Services</h1>
+    
+    {% if categories %}
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize category-header">{{ category }}</h5>
+                        <p class="card-text">
+                            {% if category == 'hair' %}
+                            Professional haircuts, coloring and styling services
+                            {% elif category == 'nails' %}
+                            Manicures, pedicures and nail art services
+                            {% elif category == 'facial' %}
+                            Rejuvenating facials and skin treatments
+                            {% elif category == 'waxing' %}
+                            Hair removal and waxing services
+                            {% else %}
+                            View our {{ category }} services
+                            {% endif %}
+                        </p>
+                        <a href="{{ url_for('services_by_category', category=category) }}" class="btn btn-primary mt-3">View Services</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            No service categories available at the moment. Please check back soon.
+            {% if current_user.is_authenticated and current_user.is_admin %}
+            <br><br>
+            <a href="{{ url_for('admin_add_service') }}" class="btn btn-sm btn-primary">Add Services</a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}Dianna’s Salon - Your Beauty Destination{% endblock %}
+
+{% block additional_head %}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="animate-fade-in-up">Welcome to Dianna’s Salon</h1>
+    <p class="animate-fade-in-up" style="animation-delay: 0.2s;">Experience exceptional beauty services in a relaxing atmosphere.</p>
+    <a href="{{ url_for('services_by_category', category='hair') }}" class="btn-hero animate-fade-in-up" style="animation-delay: 0.4s;">Explore Our Services</a>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us py-5" style="background: linear-gradient(145deg, var(--accent-color), var(--light-color));">
+  <div class="container">
+    <h2 class="category-header mb-5">Why Choose Us</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-box animate-fade-in-up">
+          <i class="bi bi-scissors feature-icon"></i>
+          <h3 class="text-light-color">Expert Stylists</h3>
+          <p class="text-light-color">Our team of highly trained professionals brings years of experience to craft your perfect look with precision and care.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box animate-fade-in-up" style="animation-delay: 0.2s;">
+          <i class="bi bi-droplet-fill feature-icon"></i>
+          <h3 class="text-light-color">Premium Products</h3>
+          <p class="text-light-color">We use only top-tier, eco-friendly products to ensure stunning results that are kind to your hair, skin, and nails.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box animate-fade-in-up" style="animation-delay: 0.4s;">
+          <i class="bi bi-heart-fill feature-icon"></i>
+          <h3 class="text-light-color">Satisfaction Guaranteed</h3>
+          <p class="text-light-color">Your happiness is our priority. We go above and beyond to exceed your expectations with every visit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 category-header">Our Services</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 service-card">
+        <img src="{{ url_for('static', filename='images/hair-services.jpg') }}" class="card-img-top" alt="Hair Services">
+        <div class="card-body text-center">
+          <h3 class="card-title">Hair Services</h3>
+          <p class="card-text">From cuts and color to treatments and styling, our hair services will help you achieve your desired look.</p>
+          <a href="{{ url_for('services_by_category', category='hair') }}" class="btn btn-primary">View Hair Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 service-card">
+        <img src="{{ url_for('static', filename='images/nail-services.jpeg') }}" class="card-img-top" alt="Nail Services">
+        <div class="card-body text-center">
+          <h3 class="card-title">Nail Services</h3>
+          <p class="card-text">Treat yourself to a manicure, pedicure, or nail enhancement service for beautiful, well-groomed nails.</p>
+          <a href="{{ url_for('services_by_category', category='nails') }}" class="btn btn-primary">View Nail Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 service-card">
+        <img src="{{ url_for('static', filename='images/facial-services.webp') }}" class="card-img-top" alt="Facial Services">
+        <div class="card-body text-center">
+          <h3 class="card-title">Facial Services</h3>
+          <p class="card-text">Revitalize your skin with our facial treatments designed to address various skin concerns and promote healthy skin.</p>
+          <a href="{{ url_for('services_by_category', category='facial') }}" class="btn btn-primary">View Facial Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4 category-header">What Our Clients Say</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "I've been coming to Dianna’s Salon for over a year now, and I'm always impressed with the quality of service. My hair has never looked better!"
+                    </div>
+                    <div class="testimonial-author">- Sarah Johnson</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "The nail technicians here are true artists. I always receive compliments on my nails after visiting Dianna’s Salon. Highly recommend!"
+                    </div>
+                    <div class="testimonial-author">- Michael Rodriguez</div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "The facial treatments at Dianna’s Salon have completely transformed my skin. The staff is knowledgeable and always recommends the perfect treatment."
+                    </div>
+                    <div class="testimonial-author">- Emily Thompson</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Call to Action Section -->
+<section class="cta-section my-5">
+  <div class="container">
+    <h2 class="animate-fade-in-up">Ready to Book Your Appointment?</h2>
+    <p class="mb-4 animate-fade-in-up" style="animation-delay: 0.2s;">Browse our services and add them to your cart to book your appointment today.</p>
+    <a href="{{ url_for('services_by_category', category='hair') }}" class="btn btn-primary btn-lg animate-fade-in-up" style="animation-delay: 0.4s;">Explore Services</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,377 @@
+<!-- templates/admin_dashboard.html -->
+{% extends "base.html" %}
+{% block title %}Admin Dashboard - Elegant Salon{% endblock %}
+{% block extra_css %}
+<style>
+    .calendar-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .calendar {
+        min-width: 1000px;
+    }
+    
+    .calendar th {
+        text-align: center;
+        width: 14.28%;
+    }
+    
+    .calendar td {
+        height: 120px;
+        padding: 5px;
+        vertical-align: top;
+        border: 1px solid #dee2e6;
+    }
+    
+    .calendar .day-number {
+        font-weight: bold;
+        text-align: right;
+        margin-bottom: 5px;
+    }
+    
+    .appointment {
+        background-color: #f8f9fa;
+        border-left: 3px solid #0d6efd;
+        padding: 3px 5px;
+        margin-bottom: 3px;
+        font-size: 0.8rem;
+        border-radius: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+    
+    .appointment-pending {
+        border-left-color: #ffc107;
+    }
+    
+    .appointment-confirmed {
+        border-left-color: #198754;
+    }
+    
+    .appointment-canceled {
+        border-left-color: #dc3545;
+        text-decoration: line-through;
+        opacity: 0.7;
+    }
+    
+    .appointment-completed {
+        border-left-color: #0dcaf0;
+    }
+    
+    .today {
+        background-color: #e8f4ff;
+    }
+    
+    .other-month {
+        background-color: #f8f9fa;
+        color: #adb5bd;
+    }
+    
+    .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+    
+    .legend-color {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border-radius: 3px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Admin Dashboard</h1>
+        <div>
+            <form class="d-inline-block" action="{{ url_for('admin_dashboard') }}" method="get">
+                <div class="input-group">
+                    <select class="form-select" name="month" id="month">
+                        {% for i in range(1, 13) %}
+                            <option value="{{ i }}" {% if selected_month == i %}selected{% endif %}>
+                                {{ month_names[i-1] }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <select class="form-select" name="year" id="year">
+                        {% for y in years %}
+                            <option value="{{ y }}" {% if selected_year == y %}selected{% endif %}>{{ y }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="btn btn-primary" type="submit">Go</button>
+                </div>
+            </form>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-secondary ms-2">Today</a>
+        </div>
+    </div>
+<!-- Dashboard Stats -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card border-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Appointments</h5>
+                <p class="card-text display-4">{{ total_appointments }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Confirmed</h5>
+                <p class="card-text display-4">{{ confirmed_appointments }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Pending</h5>
+                <p class="card-text display-4">{{ pending_appointments }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-danger mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Canceled</h5>
+                <p class="card-text display-4">{{ canceled_appointments }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Appointment Legend -->
+<div class="legend">
+    <div class="legend-item">
+        <div class="legend-color" style="border-left: 3px solid #ffc107;"></div>
+        <span>Pending</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-color" style="border-left: 3px solid #198754;"></div>
+        <span>Confirmed</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-color" style="border-left: 3px solid #0dcaf0;"></div>
+        <span>Completed</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-color" style="border-left: 3px solid #dc3545;"></div>
+        <span>Canceled</span>
+    </div>
+</div>
+
+<!-- Monthly Calendar -->
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">{{ month_names[selected_month-1] }} {{ selected_year }} Appointments</h5>
+    </div>
+    <div class="card-body calendar-container">
+        <table class="calendar table">
+            <thead>
+                <tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for week in calendar_days %}
+                <tr>
+                    {% for day, day_appointments, is_current_month, is_today in week %}
+                    <td class="{% if not is_current_month %}other-month{% endif %} {% if is_today %}today{% endif %}">
+                        <div class="day-number">{{ day }}</div>
+                        {% if is_current_month %}
+                            {% for appointment in day_appointments %}
+                            <div class="appointment appointment-{{ appointment.status }}" 
+                                 data-bs-toggle="modal" 
+                                 data-bs-target="#appointmentModal" 
+                                 data-appointment-id="{{ appointment.id }}">
+                                <small>{{ appointment.time.strftime('%I:%M %p') }}</small> - {{ appointment.client.first_name or appointment.client.username }}
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Appointment Details Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="appointmentModalLabel">Appointment Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="appointmentDetails">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div id="actionButtons">
+                    <!-- Action buttons will be added here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle month/year change without requiring form submission
+        const monthSelect = document.getElementById('month');
+        const yearSelect = document.getElementById('year');
+        
+        monthSelect.addEventListener('change', function() {
+            if (yearSelect.value) {
+                window.location.href = "{{ url_for('admin_dashboard') }}?month=" + this.value + "&year=" + yearSelect.value;
+            }
+        });
+        
+        yearSelect.addEventListener('change', function() {
+            if (monthSelect.value) {
+                window.location.href = "{{ url_for('admin_dashboard') }}?month=" + monthSelect.value + "&year=" + this.value;
+            }
+        });
+        
+        // Handle appointment modal data loading
+        const appointmentModal = document.getElementById('appointmentModal');
+        if (appointmentModal) {
+            appointmentModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const appointmentId = button.getAttribute('data-appointment-id');
+                const detailsContainer = document.getElementById('appointmentDetails');
+                const actionButtons = document.getElementById('actionButtons');
+                
+                // Reset contents
+                detailsContainer.innerHTML = `
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                `;
+                actionButtons.innerHTML = '';
+                
+                // Fetch appointment details
+                fetch(`/admin/appointment/${appointmentId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            const appointment = data.appointment;
+                            
+                            let statusBadgeClass = 'bg-warning text-dark';
+                            if (appointment.status === 'confirmed') statusBadgeClass = 'bg-success';
+                            else if (appointment.status === 'completed') statusBadgeClass = 'bg-info';
+                            else if (appointment.status === 'canceled') statusBadgeClass = 'bg-danger';
+                            
+                            detailsContainer.innerHTML = `
+                                <div class="mb-3">
+                                    <h6>Client Information</h6>
+                                    <p class="mb-1"><strong>Name:</strong> ${appointment.client_name}</p>
+                                    <p class="mb-1"><strong>Email:</strong> ${appointment.client_email}</p>
+                                    <p class="mb-0"><strong>Phone:</strong> ${appointment.client_phone || 'Not provided'}</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h6>Appointment Details</h6>
+                                    <p class="mb-1"><strong>Date:</strong> ${appointment.date}</p>
+                                    <p class="mb-1"><strong>Time:</strong> ${appointment.time}</p>
+                                    <p class="mb-1"><strong>Status:</strong> <span class="badge ${statusBadgeClass}">${appointment.status.charAt(0).toUpperCase() + appointment.status.slice(1)}</span></p>
+                                    <p class="mb-0"><strong>Created:</strong> ${appointment.created_at}</p>
+                                </div>
+                                <div>
+                                    <h6>Service(s)</h6>
+                                    <ul class="list-group">
+                                        ${appointment.services.map(service => `
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                ${service.name}
+                                                <span class="badge bg-primary rounded-pill">$${service.price.toFixed(2)}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                    <p class="mt-2 text-end"><strong>Total:</strong> $${appointment.total_price.toFixed(2)}</p>
+                                </div>
+                            `;
+                            
+                            // Add action buttons based on current status
+                            if (appointment.status === 'pending') {
+                                actionButtons.innerHTML = `
+                                    <button type="button" class="btn btn-success" onclick="updateStatus(${appointmentId}, 'confirmed')">Confirm</button>
+                                    <button type="button" class="btn btn-danger" onclick="updateStatus(${appointmentId}, 'canceled')">Cancel</button>
+                                `;
+                            } else if (appointment.status === 'confirmed') {
+                                actionButtons.innerHTML = `
+                                    <button type="button" class="btn btn-info" onclick="updateStatus(${appointmentId}, 'completed')">Mark Completed</button>
+                                    <button type="button" class="btn btn-danger" onclick="updateStatus(${appointmentId}, 'canceled')">Cancel</button>
+                                `;
+                            }
+                        } else {
+                            detailsContainer.innerHTML = `<div class="alert alert-danger">Error loading appointment details.</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        detailsContainer.innerHTML = `<div class="alert alert-danger">Error loading appointment details.</div>`;
+                    });
+            });
+        }
+    });
+    
+    // Function to update appointment status
+    function updateStatus(appointmentId, status) {
+        fetch(`/admin/appointment/${appointmentId}/status`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token() }}'  // If using CSRF protection
+            },
+            body: JSON.stringify({ status: status })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Close the modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
+                modal.hide();
+                
+                // Reload the page to reflect changes
+                window.location.reload();
+            } else {
+                alert('Failed to update appointment status.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating the appointment.');
+        });
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+<div class="col-md-4 mb-4">
+  <div class="card h-100">
+    <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">{{ item.description }}</p>
+      <p class="card-text fw-bold">${{ '%.2f' | format(item.price) }}</p>
+
+      {% if item.duration %}
+      <p class="card-text"><small class="text-muted">{{ item.duration }} minutes</small></p>
+      {% endif %}
+
+      <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+    </div>
+  </div>
+</div>
