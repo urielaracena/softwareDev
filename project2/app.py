@@ -79,7 +79,14 @@ def get_services_by_category(category):
 def utility_functions():
     def get_services_by_category(category):
         return Service.query.filter_by(category=category).all()
-    return dict(get_services_by_category=get_services_by_category)
+    
+    def get_all_services():
+        return Service.query.all()
+    
+    return dict(
+        get_services_by_category=get_services_by_category,
+        get_all_services=get_all_services
+    )
 
 # Forms
 class RegistrationForm:
@@ -172,25 +179,96 @@ class BookingForm:
             return len(self.errors) == 0
         return False
 
+    # Check if services already exist to avoid duplicates
+    if Service.query.count() == 0:
+        # Add services to the database
+        services = [
+            # Hair Services
+            Service(name="Signature Haircut", description="Custom cut with wash, blow-dry, and styling", price=60.00, duration=60, category="hair"),
+            Service(name="Precision Haircut", description="Clean, tailored haircut with finishing style", price=40.00, duration=45, category="hair"),
+            Service(name="Balayage Highlights", description="Soft, hand-painted highlights for a natural glow", price=120.00, duration=150, category="hair"),
+            Service(name="Color Refresh", description="Touch-up and tone to maintain hair color vibrancy", price=70.00, duration=90, category="hair"),
+            Service(name="Hydrating Blowout", description="Moisturizing treatment with blow-dry and style", price=55.00, duration=60, category="hair"),
+            Service(name="Brow Shaping", description="Custom brow shaping using wax or threading", price=20.00, duration=20, category="waxing"),
+            Service(name="Full Face Wax", description="Smooth finish for cheeks, lip, and chin areas", price=40.00, duration=30, category="waxing"),
+            Service(name="Bikini Line Wax", description="Clean and neat bikini area waxing", price=50.00, duration=30, category="waxing"),
+            
+            # Nail Services
+            Service(name="Classic Manicure", description="Nail shaping, cuticle care, massage, and polish", price=30.00, duration=40, category="nails"),
+            Service(name="Gel Manicure", description="Long-lasting gel polish with UV curing", price=45.00, duration=50, category="nails"),
+            Service(name="Spa Pedicure", description="Exfoliation, massage, mask, and polish", price=55.00, duration=60, category="nails"),
+            Service(name="Nail Art Add-On", description="Custom nail design available on request", price=15.00, duration=15, category="nails"),
+
+            # Facial Services
+            Service(name="Express Glow Facial", description="Quick facial to refresh and hydrate the skin", price=45.00, duration=30, category="facial"),
+            Service(name="Anti-Aging Facial", description="Firming and rejuvenating treatment", price=85.00, duration=75, category="facial"),
+            Service(name="Deep Hydration Facial", description="Restorative moisture treatment for dry skin", price=95.00, duration=80, category="facial")
+        ]
+        
+        # Add all services to the database
+        for service in services:
+            db.session.add(service)
+        
+        # Commit the changes
+        db.session.commit()
+        
+        print(f"Added {len(services)} services to the database")
+
 # Routes
 @app.route('/')
 def index():
     featured_services = Service.query.limit(3).all()
+    # Debug print to see if services exist
+    print(f"Found {len(featured_services)} featured services")
     return render_template('index.html', services=featured_services)
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
+@app.route('/debug/services')
+def debug_services():
+    """Debug endpoint to check all services in the database"""
+    all_services = Service.query.all()
+    categories = db.session.query(Service.category).distinct().all()
+    categories = [cat[0] for cat in categories]
+    
+    data = {
+        'total_services': len(all_services),
+        'categories': categories,
+        'services_by_category': {}
+    }
+    
+    for category in categories:
+        category_services = Service.query.filter_by(category=category).all()
+        data['services_by_category'][category] = [
+            {
+                'id': service.id,
+                'name': service.name,
+                'price': service.price,
+                'duration': service.duration
+            }
+            for service in category_services
+        ]
+    
+    return jsonify(data)
+
 @app.route('/services')
 def all_services():
     categories = db.session.query(Service.category).distinct().all()
     categories = [category[0] for category in categories]
+    # Debug print
+    print(f"Found {len(categories)} service categories")
+    # Get all services for debugging
+    all_services = Service.query.all()
+    print(f"Total services in database: {len(all_services)}")
     return render_template('all_services.html', categories=categories)
 
 @app.route('/services/<category>')
 def services_by_category(category):
     services = Service.query.filter_by(category=category).all()
+    # Debug print
+    print(f"Found {len(services)} services in category {category}")
     return render_template('services_by_category.html', services=services, category=category)
 
 @app.route('/cart')
@@ -461,50 +539,21 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
+# Initialize database with services
+@app.before_first_request
+def initialize_database():
+    db.create_all()
+    add_sample_services()
+
 # Port configuration for Render
 port = int(os.environ.get('PORT', 5000))
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-
-        # Check if services already exist to avoid duplicates
-        if Service.query.count() == 0:
-            # Add services to the database
-            services = [
-                # Hair Services
-                Service(name="Signature Haircut", description="Custom cut with wash, blow-dry, and styling", price=60.00, duration=60, category="hair"),
-                Service(name="Precision Haircut", description="Clean, tailored haircut with finishing style", price=40.00, duration=45, category="hair"),
-                Service(name="Balayage Highlights", description="Soft, hand-painted highlights for a natural glow", price=120.00, duration=150, category="hair"),
-                Service(name="Color Refresh", description="Touch-up and tone to maintain hair color vibrancy", price=70.00, duration=90, category="hair"),
-                Service(name="Hydrating Blowout", description="Moisturizing treatment with blow-dry and style", price=55.00, duration=60, category="hair"),
-                Service(name="Brow Shaping", description="Custom brow shaping using wax or threading", price=20.00, duration=20, category="waxing"),
-                Service(name="Full Face Wax", description="Smooth finish for cheeks, lip, and chin areas", price=40.00, duration=30, category="waxing"),
-                Service(name="Bikini Line Wax", description="Clean and neat bikini area waxing", price=50.00, duration=30, category="waxing"),
-                
-                # Nail Services
-                Service(name="Classic Manicure", description="Nail shaping, cuticle care, massage, and polish", price=30.00, duration=40, category="nails"),
-                Service(name="Gel Manicure", description="Long-lasting gel polish with UV curing", price=45.00, duration=50, category="nails"),
-                Service(name="Spa Pedicure", description="Exfoliation, massage, mask, and polish", price=55.00, duration=60, category="nails"),
-                Service(name="Nail Art Add-On", description="Custom nail design available on request", price=15.00, duration=15, category="nails"),
-
-                # Facial Services
-                Service(name="Express Glow Facial", description="Quick facial to refresh and hydrate the skin", price=45.00, duration=30, category="facial"),
-                Service(name="Anti-Aging Facial", description="Firming and rejuvenating treatment", price=85.00, duration=75, category="facial"),
-                Service(name="Deep Hydration Facial", description="Restorative moisture treatment for dry skin", price=95.00, duration=80, category="facial")
-            ]
-            
-            # Add all services to the database
-            for service in services:
-                db.session.add(service)
-            
-            # Commit the changes
-            db.session.commit()
-            
-            print(f"Added {len(services)} services to the database")
-            
+        add_sample_services()
     app.run(host='0.0.0.0', port=port, debug=False)
 else:
-    # This runs when imported by gunicorn
-    with app.app_context():
-        db.create_all()
+    # When imported by gunicorn, we still need to create tables
+    # But this will happen through the before_first_request decorator
+    pass
