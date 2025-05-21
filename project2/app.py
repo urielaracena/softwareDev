@@ -179,6 +179,8 @@ class BookingForm:
             return len(self.errors) == 0
         return False
 
+# Helper function to add sample services
+def add_sample_services():
     # Check if services already exist to avoid duplicates
     if Service.query.count() == 0:
         # Add services to the database
@@ -189,6 +191,8 @@ class BookingForm:
             Service(name="Balayage Highlights", description="Soft, hand-painted highlights for a natural glow", price=120.00, duration=150, category="hair"),
             Service(name="Color Refresh", description="Touch-up and tone to maintain hair color vibrancy", price=70.00, duration=90, category="hair"),
             Service(name="Hydrating Blowout", description="Moisturizing treatment with blow-dry and style", price=55.00, duration=60, category="hair"),
+            
+            # Waxing Services
             Service(name="Brow Shaping", description="Custom brow shaping using wax or threading", price=20.00, duration=20, category="waxing"),
             Service(name="Full Face Wax", description="Smooth finish for cheeks, lip, and chin areas", price=40.00, duration=30, category="waxing"),
             Service(name="Bikini Line Wax", description="Clean and neat bikini area waxing", price=50.00, duration=30, category="waxing"),
@@ -226,6 +230,33 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/services')
+def all_services():
+    categories = db.session.query(Service.category).distinct().all()
+    categories = [category[0] for category in categories]
+    # Debug print
+    print(f"Found {len(categories)} service categories")
+    # Get all services for debugging
+    all_services = Service.query.all()
+    print(f"Total services in database: {len(all_services)}")
+    return render_template('all_services.html', categories=categories)
+
+@app.route('/services/<category>')
+def services_by_category(category):
+    # Log the requested category for debugging
+    print(f"Requested category: {category}")
+    
+    # Get all services for this category
+    services = Service.query.filter_by(category=category).all()
+    
+    # Debug: print found services
+    print(f"Found {len(services)} services in category '{category}'")
+    if services:
+        for service in services:
+            print(f"  - {service.name} (${service.price})")
+    
+    return render_template('services_by_category.html', services=services, category=category)
+
 @app.route('/debug/services')
 def debug_services():
     """Debug endpoint to check all services in the database"""
@@ -252,24 +283,6 @@ def debug_services():
         ]
     
     return jsonify(data)
-
-@app.route('/services')
-def all_services():
-    categories = db.session.query(Service.category).distinct().all()
-    categories = [category[0] for category in categories]
-    # Debug print
-    print(f"Found {len(categories)} service categories")
-    # Get all services for debugging
-    all_services = Service.query.all()
-    print(f"Total services in database: {len(all_services)}")
-    return render_template('all_services.html', categories=categories)
-
-@app.route('/services/<category>')
-def services_by_category(category):
-    services = Service.query.filter_by(category=category).all()
-    # Debug print
-    print(f"Found {len(services)} services in category {category}")
-    return render_template('services_by_category.html', services=services, category=category)
 
 @app.route('/cart')
 def cart():
@@ -539,9 +552,8 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
-# Initialize database with services
-@app.before_first_request
-def initialize_database():
+# Create database tables within application context
+with app.app_context():
     db.create_all()
     add_sample_services()
 
@@ -549,11 +561,4 @@ def initialize_database():
 port = int(os.environ.get('PORT', 5000))
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        add_sample_services()
     app.run(host='0.0.0.0', port=port, debug=False)
-else:
-    # When imported by gunicorn, we still need to create tables
-    # But this will happen through the before_first_request decorator
-    pass
